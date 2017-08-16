@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<FileVersion major="1" minor="0" />
+	<ActiveTarget name="Debug_Win32" />
+	<File name="src\image.c" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="10464" topLine="398" />
+		</Cursor>
+	</File>
+	<File name="src\headers\IL\ilut.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3373" topLine="27" />
+		</Cursor>
+	</File>
+	<File name="src\headers\defines.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="457" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="src\texture.c" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="12928" topLine="448" />
+		</Cursor>
+	</File>
+	<File name="src\headers\list.h" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="758" topLine="54" />
+		</Cursor>
+	</File>
+	<File name="src\headers\file_system.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="758" topLine="18" />
+		</Cursor>
+	</File>
+	<File name="src\headers\mesh_md2.h" open="0" top="0" tabpos="20" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="758" topLine="89" />
+		</Cursor>
+	</File>
+	<File name="src\headers\SDL2\SDL_opengl_glext.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="33814" topLine="531" />
+		</Cursor>
+	</File>
+	<File name="src\headers\SDL2\SDL_scancode.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="14753" topLine="357" />
+		</Cursor>
+	</File>
+	<File name="src\headers\IL\il.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1693" topLine="54" />
+		</Cursor>
+	</File>
+	<File name="src\headers\format_md2.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="842" topLine="7" />
+		</Cursor>
+	</File>
+	<File name="src\headers\SDL2\SDL_stdinc.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="14422" topLine="395" />
+		</Cursor>
+	</File>
+	<File name="src\headers\SDL2\SDL_events.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4360" topLine="72" />
+		</Cursor>
+	</File>
+	<File name="src\headers\engine.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="758" topLine="25" />
+		</Cursor>
+	</File>
+	<File name="src\headers\gui_manager.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="836" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\headers\format_bsp.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="756" topLine="4" />
+		</Cursor>
+	</File>
+	<File name="src\headers\node_bsp.h" open="0" top="0" tabpos="22" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="758" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\gui_manager.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3485" topLine="118" />
+		</Cursor>
+	</File>
+	<File name="src\headers\color.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2406" topLine="47" />
+		</Cursor>
+	</File>
+	<File name="src\headers\node_md2.h" open="0" top="0" tabpos="23" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="758" topLine="90" />
+		</Cursor>
+	</File>
+	<File name="src\headers\SDL2\SDL_opengl.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="9795" topLine="292" />
+		</Cursor>
+	</File>
+	<File name="src\headers\SDL2\SDL_rect.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3218" topLine="101" />
+		</Cursor>
+	</File>
+	<File name="src\headers\SDL2\SDL_config.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1021" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="src\headers\font.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="758" topLine="46" />
+		</Cursor>
+	</File>
+	<File name="src\headers\resource_manager.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1245" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="src\headers\utils.h" open="0" top="0" tabpos="31" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4865" topLine="33" />
+		</Cursor>
+	</File>
+	<File name="src\file_system.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="502" topLine="242" />
+		</Cursor>
+	</File>
+	<File name="src\headers\dictionary.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="758" topLine="90" />
+		</Cursor>
+	</File>
+	<File name="src\headers\matrix.h" open="0" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1654" topLine="29" />
+		</Cursor>
+	</File>
+	<File name="src\headers\GL\glew.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="114503" topLine="2283" />
+		</Cursor>
+	</File>
+	<File name="src\headers\vector.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5219" topLine="142" />
+		</Cursor>
+	</File>
+	<File name="src\headers\window_system.h" open="0" top="0" tabpos="33" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1530" topLine="26" />
+		</Cursor>
+	</File>
+	<File name="src\headers\SDL2\SDL_video.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="40682" topLine="1107" />
+		</Cursor>
+	</File>
+	<File name="src\node_md2.c" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="28261" topLine="1112" />
+		</Cursor>
+	</File>
+	<File name="src\headers\mesh_bsp.h" open="0" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="758" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\text.c" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8071" topLine="329" />
+		</Cursor>
+	</File>
+	<File name="src\headers\node_2d.h" open="0" top="0" tabpos="21" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="758" topLine="81" />
+		</Cursor>
+	</File>
+	<File name="src\headers\SDL2\SDL_platform.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="143" />
+		</Cursor>
+	</File>
+	<File name="src\color.c" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="6309" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\headers\structs_private.h" open="0" top="0" tabpos="27" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="758" topLine="172" />
+		</Cursor>
+	</File>
+	<File name="src\headers\SDL2\SDL_keycode.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1514" topLine="21" />
+		</Cursor>
+	</File>
+	<File name="src\material.c" open="0" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="204" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\headers\image.h" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="758" topLine="67" />
+		</Cursor>
+	</File>
+	<File name="src\matrix.c" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5674" topLine="246" />
+		</Cursor>
+	</File>
+	<File name="src\headers\render_system.h" open="0" top="0" tabpos="24" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1346" topLine="18" />
+		</Cursor>
+	</File>
+	<File name="src\input_system.c" open="0" top="0" tabpos="40" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3012" topLine="82" />
+		</Cursor>
+	</File>
+	<File name="src\log_system.c" open="0" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="578" topLine="60" />
+		</Cursor>
+	</File>
+	<File name="src\headers\SDL2\SDL_error.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1855" topLine="33" />
+		</Cursor>
+	</File>
+	<File name="src\mesh_md2.c" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4131" topLine="137" />
+		</Cursor>
+	</File>
+	<File name="src\headers\log_system.h" open="0" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="758" topLine="4" />
+		</Cursor>
+	</File>
+	<File name="src\render_system.c" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="293" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\node_2d.c" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2064" topLine="141" />
+		</Cursor>
+	</File>
+	<File name="src\utils.c" open="0" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4895" topLine="48" />
+		</Cursor>
+	</File>
+	<File name="src\list.c" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="9907" topLine="345" />
+		</Cursor>
+	</File>
+	<File name="src\resource_manager.c" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="16177" topLine="525" />
+		</Cursor>
+	</File>
+	<File name="src\window_system.c" open="0" top="0" tabpos="37" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3944" topLine="121" />
+		</Cursor>
+	</File>
+	<File name="src\headers\scene_manager.h" open="0" top="0" tabpos="26" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="758" topLine="13" />
+		</Cursor>
+	</File>
+	<File name="src\headers\SDL2\SDL_image.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5794" topLine="113" />
+		</Cursor>
+	</File>
+	<File name="src\dictionary.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="23875" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\headers\SDL2\SDL_rwops.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4140" topLine="106" />
+		</Cursor>
+	</File>
+	<File name="src\headers\input_system.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="758" topLine="51" />
+		</Cursor>
+	</File>
+	<File name="src\camera.c" open="0" top="0" tabpos="34" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2380" topLine="156" />
+		</Cursor>
+	</File>
+	<File name="src\scene_manager.c" open="0" top="0" tabpos="36" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1035" topLine="25" />
+		</Cursor>
+	</File>
+	<File name="src\headers\text.h" open="0" top="0" tabpos="28" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="758" topLine="58" />
+		</Cursor>
+	</File>
+	<File name="src\engine.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5193" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\headers\texture.h" open="0" top="0" tabpos="29" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="758" topLine="53" />
+		</Cursor>
+	</File>
+	<File name="src\font.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1096" topLine="335" />
+		</Cursor>
+	</File>
+	<File name="src\headers\anorms.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="758" topLine="150" />
+		</Cursor>
+	</File>
+	<File name="src\headers\types.h" open="0" top="0" tabpos="30" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="758" topLine="8" />
+		</Cursor>
+	</File>
+	<File name="src\headers\SDL2\SDL_clipboard.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="5" />
+		</Cursor>
+	</File>
+	<File name="src\vector.c" open="0" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="6788" topLine="303" />
+		</Cursor>
+	</File>
+	<File name="src\main.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5592" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\headers\SDL2\SDL.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1180" topLine="18" />
+		</Cursor>
+	</File>
+	<File name="src\headers\SDL2\SDL_endian.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1673" topLine="37" />
+		</Cursor>
+	</File>
+	<File name="src\headers\camera.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="756" topLine="18" />
+		</Cursor>
+	</File>
+	<File name="src\headers\material.h" open="0" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="758" topLine="78" />
+		</Cursor>
+	</File>
+	<File name="src\headers\all_in_one.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="34" />
+		</Cursor>
+	</File>
+</CodeBlocks_layout_file>

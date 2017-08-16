@@ -1,0 +1,841 @@
+# depslib dependency file v1.0
+1502815806 source:b:\mein_docs\my_progs\c\anengine\src\camera.c
+	<stdio.h>
+	<stdlib.h>
+	"utils.h"
+	"vector.h"
+	"matrix.h"
+	"structs_private.h"
+	"camera.h"
+	"window_system.h"
+	"input_system.h"
+	"render_system.h"
+
+1502900319 b:\mein_docs\my_progs\c\anengine\src\headers\utils.h
+	"types.h"
+	"color.h"
+	"vector.h"
+	"SDL2/SDL_stdinc.h"
+	<assert.h>
+
+1502795187 b:\mein_docs\my_progs\c\anengine\src\headers\types.h
+	<stdint.h>
+	<stdbool.h>
+
+1502795030 b:\mein_docs\my_progs\c\anengine\src\headers\color.h
+	"types.h"
+
+1502879131 b:\mein_docs\my_progs\c\anengine\src\headers\vector.h
+	"types.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<math.h>
+	<float.h>
+	<sal.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_config.h
+	"SDL_platform.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_platform.h
+	"AvailabilityMacros.h"
+	"TargetConditionals.h"
+	<winapifamily.h>
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\begin_code.h
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\close_code.h
+
+1502795122 b:\mein_docs\my_progs\c\anengine\src\headers\matrix.h
+	"vector.h"
+
+1502795170 b:\mein_docs\my_progs\c\anengine\src\headers\structs_private.h
+	<stdio.h>
+	"defines.h"
+	"list.h"
+	"dictionary.h"
+	"types.h"
+	"vector.h"
+	"matrix.h"
+	"texture.h"
+	"material.h"
+	"format_md2.h"
+
+1502795040 b:\mein_docs\my_progs\c\anengine\src\headers\defines.h
+
+1502795093 b:\mein_docs\my_progs\c\anengine\src\headers\list.h
+	"defines.h"
+	"types.h"
+	<assert.h>
+	"SDL2/SDL.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_assert.h"
+	"SDL_atomic.h"
+	"SDL_audio.h"
+	"SDL_clipboard.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_filesystem.h"
+	"SDL_joystick.h"
+	"SDL_gamecontroller.h"
+	"SDL_haptic.h"
+	"SDL_hints.h"
+	"SDL_loadso.h"
+	"SDL_log.h"
+	"SDL_messagebox.h"
+	"SDL_mutex.h"
+	"SDL_power.h"
+	"SDL_render.h"
+	"SDL_rwops.h"
+	"SDL_system.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_version.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_assert.h
+	"SDL_config.h"
+	"begin_code.h"
+	<signal.h>
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_atomic.h
+	"SDL_stdinc.h"
+	"SDL_platform.h"
+	"begin_code.h"
+	<mbarrier.h>
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_endian.h
+	"SDL_stdinc.h"
+	<endian.h>
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_atomic.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_clipboard.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	<intrin.h>
+	<intrin.h>
+	<altivec.h>
+	<mmintrin.h>
+	<mm3dnow.h>
+	<xmmintrin.h>
+	<emmintrin.h>
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_gamecontroller.h"
+	"SDL_quit.h"
+	"SDL_gesture.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_surface.h"
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_pixels.h
+	"SDL_stdinc.h"
+	"SDL_endian.h"
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_rect.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_pixels.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_surface.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_blendmode.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_blendmode.h
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keycode.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_keycode.h
+	"SDL_stdinc.h"
+	"SDL_scancode.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_scancode.h
+	"SDL_stdinc.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_gamecontroller.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_gesture.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_touch.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_filesystem.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_haptic.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_hints.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_log.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_messagebox.h
+	"SDL_stdinc.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_power.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_render.h
+	"SDL_stdinc.h"
+	"SDL_rect.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_system.h
+	"SDL_stdinc.h"
+	"SDL_keyboard.h"
+	"SDL_render.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1502795047 b:\mein_docs\my_progs\c\anengine\src\headers\dictionary.h
+	"defines.h"
+	"types.h"
+	<assert.h>
+	"SDL2/SDL.h"
+
+1502795179 b:\mein_docs\my_progs\c\anengine\src\headers\texture.h
+	"defines.h"
+	"types.h"
+	<assert.h>
+
+1502795122 b:\mein_docs\my_progs\c\anengine\src\headers\material.h
+	"defines.h"
+	"types.h"
+	<assert.h>
+	"texture.h"
+
+1502900209 b:\mein_docs\my_progs\c\anengine\src\headers\format_md2.h
+	"types.h"
+	"vector.h"
+
+1502900444 b:\mein_docs\my_progs\c\anengine\src\headers\camera.h
+	"types.h"
+
+1502795206 b:\mein_docs\my_progs\c\anengine\src\headers\window_system.h
+	"SDL2/SDL.h"
+	"types.h"
+
+1502795089 b:\mein_docs\my_progs\c\anengine\src\headers\input_system.h
+	"SDL2/SDL.h"
+	"types.h"
+	"vector.h"
+
+1502795891 b:\mein_docs\my_progs\c\anengine\src\headers\render_system.h
+	"types.h"
+	"matrix.h"
+	"GL/glew.h"
+	<GL/gl.h>
+	"SDL2/SDL_opengl.h"
+	"SDL2/SDL_opengl_glext.h"
+	<GL/glu.h>
+
+1499147419 b:\mein_docs\my_progs\c\anengine\src\headers\gl\glew.h
+	<stddef.h>
+	<inttypes.h>
+	<stdint.h>
+	<inttypes.h>
+	<OpenGL/glu.h>
+	<GL/glu.h>
+
+1476935894 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_opengl.h
+	"SDL_config.h"
+	"gl_mangle.h"
+	<windows.h>
+	"SDL_opengl_glext.h"
+
+1499168289 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_opengl_glext.h
+	<windows.h>
+	<stddef.h>
+	<inttypes.h>
+	<inttypes.h>
+	<inttypes.h>
+	<stdint.h>
+	<stdint.h>
+	<inttypes.h>
+
+1501420748 source:b:\mein_docs\my_progs\c\anengine\src\color.c
+	"SDL2/SDL.h"
+	"color.h"
+	"utils.h"
+
+1501667079 source:b:\mein_docs\my_progs\c\anengine\src\dictionary.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utils.h"
+	"dictionary.h"
+	"SDL2/SDL.h"
+	"tinycthread.h"
+
+1347056997 b:\mein_docs\my_progs\c\anengine\src\headers\tinycthread.h
+	<time.h>
+	<pthread.h>
+	<windows.h>
+
+1502814032 source:b:\mein_docs\my_progs\c\anengine\src\engine.c
+	"SDL2/SDL.h"
+	"defines.h"
+	"types.h"
+	"structs_private.h"
+	"engine.h"
+	"log_system.h"
+	"input_system.h"
+	"window_system.h"
+	"render_system.h"
+	"resource_manager.h"
+	"texture.h"
+	"material.h"
+	"font.h"
+	"image.h"
+	"text.h"
+	"node_2d.h"
+	"mesh_md2.h"
+	"node_md2.h"
+	"mesh_bsp.h"
+	"node_bsp.h"
+
+1502795069 b:\mein_docs\my_progs\c\anengine\src\headers\engine.h
+	<stdio.h>
+	<stdlib.h>
+	"types.h"
+
+1502795105 b:\mein_docs\my_progs\c\anengine\src\headers\log_system.h
+	"types.h"
+
+1502881941 b:\mein_docs\my_progs\c\anengine\src\headers\resource_manager.h
+	"types.h"
+
+1502795069 b:\mein_docs\my_progs\c\anengine\src\headers\font.h
+	"defines.h"
+	"texture.h"
+	<assert.h>
+
+1502795082 b:\mein_docs\my_progs\c\anengine\src\headers\image.h
+	"defines.h"
+	"types.h"
+	"texture.h"
+	"material.h"
+	<assert.h>
+
+1502795175 b:\mein_docs\my_progs\c\anengine\src\headers\text.h
+	"defines.h"
+	"font.h"
+	<assert.h>
+
+1502795132 b:\mein_docs\my_progs\c\anengine\src\headers\node_2d.h
+	"defines.h"
+	"list.h"
+	"types.h"
+	"image.h"
+	"text.h"
+
+1502795127 b:\mein_docs\my_progs\c\anengine\src\headers\mesh_md2.h
+
+1502795145 b:\mein_docs\my_progs\c\anengine\src\headers\node_md2.h
+	"defines.h"
+	"list.h"
+	"types.h"
+	"mesh_md2.h"
+
+1502795121 b:\mein_docs\my_progs\c\anengine\src\headers\mesh_bsp.h
+
+1502795137 b:\mein_docs\my_progs\c\anengine\src\headers\node_bsp.h
+
+1502276067 source:b:\mein_docs\my_progs\c\anengine\src\file_system.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"types.h"
+	"utils.h"
+	"file_system.h"
+	"log_system.h"
+
+1502795069 b:\mein_docs\my_progs\c\anengine\src\headers\file_system.h
+	"types.h"
+
+1501646265 source:b:\mein_docs\my_progs\c\anengine\src\font.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"dictionary.h"
+	"structs_private.h"
+	"utils.h"
+	"log_system.h"
+	"render_system.h"
+	"font.h"
+	"texture.h"
+	"material.h"
+	"image.h"
+	"font.h"
+	"text.h"
+
+1502900636 source:b:\mein_docs\my_progs\c\anengine\src\gui_manager.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utils.h"
+	"structs_private.h"
+	"matrix.h"
+	"window_system.h"
+	"render_system.h"
+	"gui_manager.h"
+	"font.h"
+	"image.h"
+
+1502900619 b:\mein_docs\my_progs\c\anengine\src\headers\gui_manager.h
+	"image.h"
+	"font.h"
+
+1502791390 source:b:\mein_docs\my_progs\c\anengine\src\image.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utils.h"
+	"dictionary.h"
+	"window_system.h"
+	"render_system.h"
+	"structs_private.h"
+	"image.h"
+	"texture.h"
+	"material.h"
+	"image.h"
+	"font.h"
+	"text.h"
+
+1502815279 source:b:\mein_docs\my_progs\c\anengine\src\input_system.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"SDL2/SDL.h"
+	"utils.h"
+	"input_system.h"
+	"window_system.h"
+
+1501667095 source:b:\mein_docs\my_progs\c\anengine\src\list.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"list.h"
+	"SDL2/SDL.h"
+	"tinycthread.h"
+
+1498636111 source:b:\mein_docs\my_progs\c\anengine\src\log_system.c
+	<assert.h>
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+	<time.h>
+	<string.h>
+	"log_system.h"
+
+1502441821 source:b:\mein_docs\my_progs\c\anengine\src\material.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"SDL2/SDL.h"
+	"utils.h"
+	"structs_private.h"
+	"dictionary.h"
+	"texture.h"
+	"material.h"
+	"log_system.h"
+	"render_system.h"
+	"texture.h"
+	"material.h"
+	"image.h"
+	"font.h"
+	"text.h"
+
+1502449523 source:b:\mein_docs\my_progs\c\anengine\src\matrix.c
+	<string.h>
+	"SDL2/SDL.h"
+	"matrix.h"
+	"types.h"
+
+1502277600 source:b:\mein_docs\my_progs\c\anengine\src\mesh_md2.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"SDL2/SDL.h"
+	"structs_private.h"
+	"utils.h"
+	"types.h"
+	"vector.h"
+	"log_system.h"
+	"file_system.h"
+	"render_system.h"
+	"resource_manager.h"
+	"engine.h"
+	"mesh_md2.h"
+
+1501673277 source:b:\mein_docs\my_progs\c\anengine\src\node_2d.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<malloc.h>
+	"SDL2/SDL.h"
+	"structs_private.h"
+	"matrix.h"
+	"list.h"
+	"utils.h"
+	"log_system.h"
+	"window_system.h"
+	"node_2d.h"
+
+1502794656 source:b:\mein_docs\my_progs\c\anengine\src\node_md2.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<malloc.h>
+	"SDL2/SDL.h"
+	"structs_private.h"
+	"matrix.h"
+	"list.h"
+	"utils.h"
+	"anorms.h"
+	"log_system.h"
+	"window_system.h"
+	"render_system.h"
+	"engine.h"
+	"node_md2.h"
+
+1502795001 b:\mein_docs\my_progs\c\anengine\src\headers\anorms.h
+	"vector.h"
+
+1502643437 source:b:\mein_docs\my_progs\c\anengine\src\render_system.c
+	<GL/glu.h>
+	<GL/glext.h>
+	"SDL2/SDL.h"
+	"types.h"
+	"matrix.h"
+	"defines.h"
+	"log_system.h"
+	"render_system.h"
+	"window_system.h"
+
+1502900026 source:b:\mein_docs\my_progs\c\anengine\src\resource_manager.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<malloc.h>
+	"structs_private.h"
+	"types.h"
+	"utils.h"
+	"color.h"
+	"log_system.h"
+	"file_system.h"
+	"render_system.h"
+	"resource_manager.h"
+	"format_md2.h"
+	"format_bsp.h"
+	"mesh_md2.h"
+	"mesh_bsp.h"
+	"IL/il.h"
+	"IL/ilu.h"
+	"IL/ilut.h"
+	"SDL2/SDL.h"
+	"SDL2/SDL_image.h"
+
+1502899768 b:\mein_docs\my_progs\c\anengine\src\headers\format_bsp.h
+	"types.h"
+	"vector.h"
+
+1483175630 b:\mein_docs\my_progs\c\anengine\src\headers\il\il.h
+	<stdio.h>
+	<limits.h>
+	<wchar.h>
+
+1483175636 b:\mein_docs\my_progs\c\anengine\src\headers\il\ilu.h
+	<IL/il.h>
+
+1500520944 b:\mein_docs\my_progs\c\anengine\src\headers\il\ilut.h
+	<IL/il.h>
+	<IL/ilu.h>
+	<IL/ilut_config.h>
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+	<windows.h>
+	<d3d8.h>
+	<d3d9.h>
+	<rpcsal.h>
+	<sal.h>
+	<d3d10.h>
+	<X11/Xlib.h>
+	<X11/Xutil.h>
+	<sys/ipc.h>
+	<sys/shm.h>
+	<X11/extensions/XShm.h>
+	<allegro.h>
+
+1481983712 b:\mein_docs\my_progs\c\anengine\src\headers\il\ilut_config.h
+
+1451800373 b:\mein_docs\my_progs\c\anengine\src\headers\sdl2\sdl_image.h
+	"SDL.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1502796298 source:b:\mein_docs\my_progs\c\anengine\src\scene_manager.c
+	"SDL2/SDL.h"
+	"color.h"
+	"structs_private.h"
+	"window_system.h"
+	"input_system.h"
+	"log_system.h"
+	"render_system.h"
+	"gui_manager.h"
+	"scene_manager.h"
+	"engine.h"
+	"image.h"
+	"text.h"
+	"node_2d.h"
+	"node_md2.h"
+
+1502795158 b:\mein_docs\my_progs\c\anengine\src\headers\scene_manager.h
+
+1501663909 source:b:\mein_docs\my_progs\c\anengine\src\text.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utils.h"
+	"dictionary.h"
+	"structs_private.h"
+	"render_system.h"
+	"vector.h"
+	"text.h"
+	"texture.h"
+	"material.h"
+	"image.h"
+	"font.h"
+	"text.h"
+
+1501646344 source:b:\mein_docs\my_progs\c\anengine\src\texture.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"SDL2/SDL.h"
+	"defines.h"
+	"structs_private.h"
+	"dictionary.h"
+	"texture.h"
+	"utils.h"
+	"log_system.h"
+	"file_system.h"
+	"render_system.h"
+	"resource_manager.h"
+	"texture.h"
+	"material.h"
+	"image.h"
+	"font.h"
+	"text.h"
+
+1501576980 source:b:\mein_docs\my_progs\c\anengine\src\utils.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"SDL2/SDL.h"
+	"utils.h"
+	"defines.h"
+	"file_system.h"
+
+1502882643 source:b:\mein_docs\my_progs\c\anengine\src\vector.c
+	"SDL2/SDL.h"
+	"vector.h"
+
+1502796318 source:b:\mein_docs\my_progs\c\anengine\src\window_system.c
+	"SDL2/SDL.h"
+	"log_system.h"
+	"window_system.h"
+	"render_system.h"
+	"defines.h"
+	"engine.h"
+

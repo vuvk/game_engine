@@ -17,13 +17,13 @@
 *.pch
 
 # Libraries
-*.lib
+//*.lib
 *.a
 *.la
 *.lo
 
 # Shared objects (inc. Windows DLLs)
-*.dll
+//*.dll
 *.so
 *.so.*
 *.dylib
@@ -50,3 +50,19 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+changelog.txt
+TODO.txt
+*.log
+*.bat
+
+doc
+doc/*
+obj
+obj/*
+bin/baseq2/maps
+bin/baseq2/maps/*
+bin/baseq2/textures/e1u1
+bin/baseq2/textures/e1u1/*
+bin/baseq2/models/monsters/infantry
+bin/baseq2/models/monsters/infantry/*

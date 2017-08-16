@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="game_engine" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug_Win32">
+				<Option output="bin/game_engine" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-Wfatal-errors" />
+					<Add option="-Wextra" />
+					<Add option="-Wall" />
+					<Add option="-m32" />
+					<Add option="-g" />
+					<Add option="-D_DEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="-m32" />
+					<Add option="-lmingw32 -lSDL2main -lSDL2 -lglew32 -lopengl32 -lglext -lDevIL -lILU -lILUT" />
+				</Linker>
+			</Target>
+			<Target title="Release_Win32">
+				<Option output="bin/game_engine" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O3" />
+					<Add option="-m32" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-m32" />
+					<Add option="-lmingw32 -lSDL2main -lSDL2 -lglew32 -lopengl32 -lglext -lDevIL -lILU -lILUT" />
+				</Linker>
+			</Target>
+			<Target title="Debug_Linux">
+				<Option output="bin/game_engine" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add option="-D_DEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="-lSDL2main -lSDL2 -lGL -lIL -lILU -lILUT -lSDL2_image -lpthread" />
+				</Linker>
+			</Target>
+			<Target title="Release_Linux">
+				<Option output="bin/game_engine" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-Wall" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-lSDL2main -lSDL2 -lGL -lIL -lILU -lILUT -lSDL2_image -lpthread" />
+				</Linker>
+			</Target>
+			<Target title="Debug_Win64">
+				<Option output="bin/game_engine" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-m64" />
+					<Add option="-g" />
+					<Add option="-D_DEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="-m64" />
+					<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lglew32 -lopengl32 -lDevIL -lILU -lILUT" />
+				</Linker>
+			</Target>
+			<Target title="Release_Win64">
+				<Option output="bin/game_engine" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-m64" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-m64" />
+					<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lglew32 -lopengl32 -lDevIL -lILU -lILUT" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-std=gnu11 -fms-extensions" />
+			<Add directory="src/" />
+			<Add directory="src/headers" />
+		</Compiler>
+		<Linker>
+			<Add directory="lib" />
+		</Linker>
+		<Unit filename="src/camera.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/color.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/dictionary.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/engine.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/file_system.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/font.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/gui_manager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/headers/GL/glew.h" />
+		<Unit filename="src/headers/IL/il.h" />
+		<Unit filename="src/headers/IL/ilu.h" />
+		<Unit filename="src/headers/IL/ilut.h" />
+		<Unit filename="src/headers/SDL2/SDL.h" />
+		<Unit filename="src/headers/SDL2/SDL_assert.h" />
+		<Unit filename="src/headers/SDL2/SDL_atomic.h" />
+		<Unit filename="src/headers/SDL2/SDL_audio.h" />
+		<Unit filename="src/headers/SDL2/SDL_bits.h" />
+		<Unit filename="src/headers/SDL2/SDL_blendmode.h" />
+		<Unit filename="src/headers/SDL2/SDL_clipboard.h" />
+		<Unit filename="src/headers/SDL2/SDL_config.h" />
+		<Unit filename="src/headers/SDL2/SDL_cpuinfo.h" />
+		<Unit filename="src/headers/SDL2/SDL_egl.h" />
+		<Unit filename="src/headers/SDL2/SDL_endian.h" />
+		<Unit filename="src/headers/SDL2/SDL_error.h" />
+		<Unit filename="src/headers/SDL2/SDL_events.h" />
+		<Unit filename="src/headers/SDL2/SDL_filesystem.h" />
+		<Unit filename="src/headers/SDL2/SDL_gamecontroller.h" />
+		<Unit filename="src/headers/SDL2/SDL_gesture.h" />
+		<Unit filename="src/headers/SDL2/SDL_haptic.h" />
+		<Unit filename="src/headers/SDL2/SDL_hints.h" />
+		<Unit filename="src/headers/SDL2/SDL_image.h" />
+		<Unit filename="src/headers/SDL2/SDL_joystick.h" />
+		<Unit filename="src/headers/SDL2/SDL_keyboard.h" />
+		<Unit filename="src/headers/SDL2/SDL_keycode.h" />
+		<Unit filename="src/headers/SDL2/SDL_loadso.h" />
+		<Unit filename="src/headers/SDL2/SDL_log.h" />
+		<Unit filename="src/headers/SDL2/SDL_main.h" />
+		<Unit filename="src/headers/SDL2/SDL_messagebox.h" />
+		<Unit filename="src/headers/SDL2/SDL_mixer.h" />
+		<Unit filename="src/headers/SDL2/SDL_mouse.h" />
+		<Unit filename="src/headers/SDL2/SDL_mutex.h" />
+		<Unit filename="src/headers/SDL2/SDL_name.h" />
+		<Unit filename="src/headers/SDL2/SDL_opengl.h" />
+		<Unit filename="src/headers/SDL2/SDL_opengl_glext.h" />
+		<Unit filename="src/headers/SDL2/SDL_opengles.h" />
+		<Unit filename="src/headers/SDL2/SDL_opengles2.h" />
+		<Unit filename="src/headers/SDL2/SDL_opengles2_gl2.h" />
+		<Unit filename="src/headers/SDL2/SDL_opengles2_gl2ext.h" />
+		<Unit filename="src/headers/SDL2/SDL_opengles2_gl2platform.h" />
+		<Unit filename="src/headers/SDL2/SDL_opengles2_khrplatform.h" />
+		<Unit filename="src/headers/SDL2/SDL_pixels.h" />
+		<Unit filename="src/headers/SDL2/SDL_platform.h" />
+		<Unit filename="src/headers/SDL2/SDL_power.h" />
+		<Unit filename="src/headers/SDL2/SDL_quit.h" />
+		<Unit filename="src/headers/SDL2/SDL_rect.h" />
+		<Unit filename="src/headers/SDL2/SDL_render.h" />
+		<Unit filename="src/headers/SDL2/SDL_revision.h" />
+		<Unit filename="src/headers/SDL2/SDL_rwops.h" />
+		<Unit filename="src/headers/SDL2/SDL_scancode.h" />
+		<Unit filename="src/headers/SDL2/SDL_shape.h" />
+		<Unit filename="src/headers/SDL2/SDL_stdinc.h" />
+		<Unit filename="src/headers/SDL2/SDL_surface.h" />
+		<Unit filename="src/headers/SDL2/SDL_system.h" />
+		<Unit filename="src/headers/SDL2/SDL_syswm.h" />
+		<Unit filename="src/headers/SDL2/SDL_test.h" />
+		<Unit filename="src/headers/SDL2/SDL_test_assert.h" />
+		<Unit filename="src/headers/SDL2/SDL_test_common.h" />
+		<Unit filename="src/headers/SDL2/SDL_test_compare.h" />
+		<Unit filename="src/headers/SDL2/SDL_test_crc32.h" />
+		<Unit filename="src/headers/SDL2/SDL_test_font.h" />
+		<Unit filename="src/headers/SDL2/SDL_test_fuzzer.h" />
+		<Unit filename="src/headers/SDL2/SDL_test_harness.h" />
+		<Unit filename="src/headers/SDL2/SDL_test_images.h" />
+		<Unit filename="src/headers/SDL2/SDL_test_log.h" />
+		<Unit filename="src/headers/SDL2/SDL_test_md5.h" />
+		<Unit filename="src/headers/SDL2/SDL_test_random.h" />
+		<Unit filename="src/headers/SDL2/SDL_thread.h" />
+		<Unit filename="src/headers/SDL2/SDL_timer.h" />
+		<Unit filename="src/headers/SDL2/SDL_touch.h" />
+		<Unit filename="src/headers/SDL2/SDL_types.h" />
+		<Unit filename="src/headers/SDL2/SDL_version.h" />
+		<Unit filename="src/headers/SDL2/SDL_video.h" />
+		<Unit filename="src/headers/SDL2/begin_code.h" />
+		<Unit filename="src/headers/SDL2/close_code.h" />
+		<Unit filename="src/headers/all_in_one.h" />
+		<Unit filename="src/headers/anorms.h" />
+		<Unit filename="src/headers/camera.h" />
+		<Unit filename="src/headers/color.h" />
+		<Unit filename="src/headers/defines.h" />
+		<Unit filename="src/headers/dictionary.h" />
+		<Unit filename="src/headers/engine.h" />
+		<Unit filename="src/headers/file_system.h" />
+		<Unit filename="src/headers/font.h" />
+		<Unit filename="src/headers/format_bsp.h" />
+		<Unit filename="src/headers/format_md2.h" />
+		<Unit filename="src/headers/gui_manager.h" />
+		<Unit filename="src/headers/image.h" />
+		<Unit filename="src/headers/input_system.h" />
+		<Unit filename="src/headers/list.h" />
+		<Unit filename="src/headers/log_system.h" />
+		<Unit filename="src/headers/material.h" />
+		<Unit filename="src/headers/matrix.h" />
+		<Unit filename="src/headers/mesh_bsp.h" />
+		<Unit filename="src/headers/mesh_md2.h" />
+		<Unit filename="src/headers/node_2d.h" />
+		<Unit filename="src/headers/node_bsp.h" />
+		<Unit filename="src/headers/node_md2.h" />
+		<Unit filename="src/headers/render_system.h" />
+		<Unit filename="src/headers/resource_manager.h" />
+		<Unit filename="src/headers/scene_manager.h" />
+		<Unit filename="src/headers/structs_private.h" />
+		<Unit filename="src/headers/text.h" />
+		<Unit filename="src/headers/texture.h" />
+		<Unit filename="src/headers/types.h" />
+		<Unit filename="src/headers/utils.h" />
+		<Unit filename="src/headers/vector.h" />
+		<Unit filename="src/headers/window_system.h" />
+		<Unit filename="src/image.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/input_system.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/list.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/log_system.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/material.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/matrix.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/mesh_md2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/node_2d.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/node_md2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/render_system.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/resource_manager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/scene_manager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/text.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/texture.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/utils.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/vector.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/window_system.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
