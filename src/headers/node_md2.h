@@ -87,9 +87,15 @@ aMaterial NodeMd2GetMaterialEx(aNodeMd2 nodeMd2, uint32 numOfMaterial);
 #define NodeMd2GetAnimSpeed(nodeMd2) NodeMd2GetAnimSpeedEx(nodeMd2, 0)
 /** get speed of animation in node */
 float NodeMd2GetAnimSpeedEx(aNodeMd2 nodeMd2, uint32 numOfMesh);
+/** get number of current frame in animation */
+#define NodeMd2GetCurrentFrame(nodeMd2) NodeMd2GetCurrentFrameEx(nodeMd2, 0)
+int32 NodeMd2GetCurrentFrameEx(aNodeMd2 nodeMd2, uint32 numOfMesh);
 /** get start and end frame of animation in node */
 #define NodeMd2GetInterval(nodeMd2, startFrame, endFrame) NodeMd2GetIntervalEx(nodeMd2, startFrame, endFrame, 0)
 bool NodeMd2GetIntervalEx(aNodeMd2 nodeMd2, int32* startFrame, int32* endFrame, uint32 numOfMesh);
+/** get looping of animation (by number of linked mesh)*/
+#define NodeMd2GetAnimLoop(nodeMd2) NodeMd2GetAnimLoopEx(nodeMd2, 0)
+bool NodeMd2GetAnimLoopEx(aNodeMd2 nodeMd2, uint32 numOfMesh);
 /** get count of links */
 int32 NodeMd2GetCountOfLinks(aNodeMd2 nodeMd2);
 
@@ -148,6 +154,9 @@ bool NodeMd2SetMaterialEx(aNodeMd2 nodeMd2, aMaterial material, uint32 numOfMate
 #define NodeMd2SetAnimSpeed(nodeMd2, animSpeed) NodeMd2SetAnimSpeedEx(nodeMd2, animSpeed, 0)
 /** set speed of animation in node */
 bool NodeMd2SetAnimSpeedEx(aNodeMd2 nodeMd2, float animSpeed, uint32 numOfMesh);
+/** set number of current frame in animation */
+#define NodeMd2SetCurrentFrame(nodeMd2, numOfFrame) NodeMd2SetCurrentFrameEx(nodeMd2, numOfFrame, 0)
+bool NodeMd2SetCurrentFrameEx(aNodeMd2 nodeMd2, int32 numOfFrame, uint32 numOfMesh);
 /** set start and end frame of animation in node */
 #define NodeMd2SetInterval(nodeMd2, startFrame, endFrame) NodeMd2SetIntervalEx(nodeMd2, startFrame, endFrame, 0)
 bool NodeMd2SetIntervalEx(aNodeMd2 nodeMd2, int32 startFrame, int32 endFrame, uint32 numOfMesh);
@@ -155,6 +164,9 @@ bool NodeMd2SetIntervalEx(aNodeMd2 nodeMd2, int32 startFrame, int32 endFrame, ui
 #define NodeMd2SetIntervalByName(nodeMd2, animName) NodeMd2SetIntervalByNameEx(nodeMd2, animName, 0)
 /** set start and end frame of animation by name in node (by number of linked mesh)*/
 bool NodeMd2SetIntervalByNameEx(aNodeMd2 nodeMd2, const char* animName, uint32 numOfMesh);
+/** set looping of animation (by number of linked mesh)*/
+#define NodeMd2SetAnimLoop(nodeMd2, loop) NodeMd2SetAnimLoopEx(nodeMd2, loop, 0)
+bool NodeMd2SetAnimLoopEx(aNodeMd2 nodeMd2, bool loop, uint32 numOfMesh);
 
 /** get count of loaded nodes */
 uint32 NodesMd2GetCount();

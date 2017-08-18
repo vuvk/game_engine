@@ -146,14 +146,17 @@ inline void EngineSetLimitFPS(uint16 limitFPS)
     _limitFPS = limitFPS;
     _framerate = 1000.0f / limitFPS;
 }
+
 inline uint16 EngineGetLimitFPS()
 {
     return _limitFPS;
 }
+
 inline uint16 EngineGetFPS()
 {
     return _fps;
 }
+
 inline float EngineGetDeltaTime()
 {
     return _deltaTime;
@@ -211,6 +214,7 @@ inline const char* EngineGetName()
 {
     return ENGINE_NAME;
 }
+
 inline const char* EngineGetVersion()
 {
     return ENGINE_VERSION;

@@ -17,3 +17,5 @@
 */
 
 #pragma once
+
+typedef void* aMeshBsp;

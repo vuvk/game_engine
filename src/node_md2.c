@@ -230,6 +230,7 @@ bool NodeMd2AddLinkToMeshMd2(aNodeMd2 nodeMd2, aMeshMd2 meshMd2)
         param->nbuf_next = calloc(1, sizeOfVerts);
         param->nbuf_prev = calloc(1, sizeOfVerts);
 
+        param->loop = true;
         param->visible = true;
         param->maxFrame = mesh->model->header.numOfFrames - 1;
         if (param->maxFrame > 0)
@@ -483,8 +484,7 @@ bool NodeMd2GetIntervalEx(aNodeMd2 nodeMd2, int32* startFrame, int32* endFrame, 
     if (startFrame == NULL || endFrame == NULL)
         return false;
 
-    SNodeMd2* node = (SNodeMd2*)nodeMd2;
-    SListElement* element = ListGetElementByNumber(node->params, numOfMesh);
+    SListElement* element = ListGetElementByNumber(((SNodeMd2*)nodeMd2)->params, numOfMesh);
     if (element == NULL || element->value == NULL)
         return false;
 
@@ -493,6 +493,17 @@ bool NodeMd2GetIntervalEx(aNodeMd2 nodeMd2, int32* startFrame, int32* endFrame, 
     *endFrame   = param->maxFrame;
 
     return true;
+}
+
+bool NodeMd2GetAnimLoopEx(aNodeMd2 nodeMd2, uint32 numOfMesh)
+{
+    IS_NODEMD2_VALID(nodeMd2);
+
+    SListElement* element = ListGetElementByNumber(((SNodeMd2*)nodeMd2)->params, numOfMesh);
+    if (element == NULL || element->value == NULL)
+        return false;
+
+    return ((SParamMd2*)element->value)->loop;
 }
 
 inline int32 NodeMd2GetCountOfLinks(aNodeMd2 nodeMd2)
@@ -506,8 +517,7 @@ aMeshMd2 NodeMd2GetMeshMd2Ex(aNodeMd2 nodeMd2, uint32 numOfMesh)
 {
     IS_NODEMD2_VALID(nodeMd2);
 
-    SNodeMd2* node = (SNodeMd2*)nodeMd2;
-    SListElement* element = ListGetElementByNumber(node->params, numOfMesh);
+    SListElement* element = ListGetElementByNumber(((SNodeMd2*)nodeMd2)->params, numOfMesh);
     if (element == NULL || element->value == NULL)
         return NULL;
 
@@ -530,14 +540,23 @@ float NodeMd2GetAnimSpeedEx(aNodeMd2 nodeMd2, uint32 numOfMesh)
 {
     IS_NODEMD2_VALID(nodeMd2);
 
-    SNodeMd2* node = (SNodeMd2*)nodeMd2;
-    SListElement* element = ListGetElementByNumber(node->params, numOfMesh);
+    SListElement* element = ListGetElementByNumber(((SNodeMd2*)nodeMd2)->params, numOfMesh);
     if (element == NULL || element->value == NULL)
         return 0.0f;
 
     return ((SParamMd2*)element->value)->animSpeed;
 }
 
+int32 NodeMd2GetCurrentFrameEx(aNodeMd2 nodeMd2, uint32 numOfMesh)
+{
+    IS_NODEMD2_VALID(nodeMd2);
+
+    SListElement* element = ListGetElementByNumber(((SNodeMd2*)nodeMd2)->params, numOfMesh);
+    if (element == NULL || element->value == NULL)
+        return false;
+
+    return ((SParamMd2*)element->value)->numOfFramePrev;
+}
 
 bool NodeMd2IsVisible(aNodeMd2 nodeMd2)
 {
@@ -899,8 +918,7 @@ bool NodeMd2SetMeshMd2Ex(aNodeMd2 nodeMd2, aMeshMd2 meshMd2, uint32 numOfMesh)
     IS_NODEMD2_VALID(nodeMd2);
     IS_MESHMD2_VALID(meshMd2);
 
-    SNodeMd2* node = (SNodeMd2*)nodeMd2;
-    SListElement* element = ListGetElementByNumber(node->params, numOfMesh);
+    SListElement* element = ListGetElementByNumber(((SNodeMd2*)nodeMd2)->params, numOfMesh);
     if (element == NULL || element->value == NULL)
         return false;
 
@@ -940,8 +958,7 @@ bool NodeMd2SetAnimSpeedEx(aNodeMd2 nodeMd2, float animSpeed, uint32 numOfMesh)
 {
     IS_NODEMD2_VALID(nodeMd2);
 
-    SNodeMd2* node = (SNodeMd2*)nodeMd2;
-    SListElement* element = ListGetElementByNumber(node->params, numOfMesh);
+    SListElement* element = ListGetElementByNumber(((SNodeMd2*)nodeMd2)->params, numOfMesh);
     if (element == NULL || element->value == NULL)
         return false;
 
@@ -950,12 +967,31 @@ bool NodeMd2SetAnimSpeedEx(aNodeMd2 nodeMd2, float animSpeed, uint32 numOfMesh)
     return true;
 }
 
+bool NodeMd2SetCurrentFrameEx(aNodeMd2 nodeMd2, int32 numOfFrame, uint32 numOfMesh)
+{
+    IS_NODEMD2_VALID(nodeMd2);
+
+    SListElement* element = ListGetElementByNumber(((SNodeMd2*)nodeMd2)->params, numOfMesh);
+    if (element == NULL || element->value == NULL)
+        return false;
+
+    SParamMd2* param = (SParamMd2*)element->value;
+    if (param->mesh == NULL || param->mesh->model == NULL)
+        return false;
+
+    Limit(&numOfFrame, param->minFrame, param->maxFrame);
+
+    param->numOfFramePrev = numOfFrame;
+    param->numOfFrameNext = numOfFrame++;
+
+    return true;
+}
+
 bool NodeMd2SetIntervalEx(aNodeMd2 nodeMd2, int32 startFrame, int32 endFrame, uint32 numOfMesh)
 {
     IS_NODEMD2_VALID(nodeMd2);
 
-    SNodeMd2* node = (SNodeMd2*)nodeMd2;
-    SListElement* element = ListGetElementByNumber(node->params, numOfMesh);
+    SListElement* element = ListGetElementByNumber(((SNodeMd2*)nodeMd2)->params, numOfMesh);
     if (element == NULL || element->value == NULL)
         return false;
 
@@ -972,7 +1008,7 @@ bool NodeMd2SetIntervalEx(aNodeMd2 nodeMd2, int32 startFrame, int32 endFrame, ui
     param->maxFrame = endFrame;
 
     param->numOfFramePrev = startFrame;
-    param->numOfFrameNext = startFrame + 1;
+    param->numOfFrameNext = startFrame++;
 
     NodeMd2RecalculateParam(param);
 
@@ -983,8 +1019,7 @@ bool NodeMd2SetIntervalByNameEx(aNodeMd2 nodeMd2, const char* animName, uint32 n
 {
     IS_NODEMD2_VALID(nodeMd2);
 
-    SNodeMd2* node = (SNodeMd2*)nodeMd2;
-    SListElement* element = ListGetElementByNumber(node->params, numOfMesh);
+    SListElement* element = ListGetElementByNumber(((SNodeMd2*)nodeMd2)->params, numOfMesh);
     if (element == NULL || element->value == NULL)
         return false;
 
@@ -1032,6 +1067,19 @@ bool NodeMd2SetIntervalByNameEx(aNodeMd2 nodeMd2, const char* animName, uint32 n
         return false;
 
     return NodeMd2SetIntervalEx(nodeMd2, startFrame, --endFrame, numOfMesh);
+}
+
+bool NodeMd2SetAnimLoopEx(aNodeMd2 nodeMd2, bool loop, uint32 numOfMesh)
+{
+    IS_NODEMD2_VALID(nodeMd2);
+
+    SListElement* element = ListGetElementByNumber(((SNodeMd2*)nodeMd2)->params, numOfMesh);
+    if (element == NULL || element->value == NULL)
+        return false;
+
+    ((SParamMd2*)element->value)->loop = loop;
+
+    return true;
 }
 
 
@@ -1158,9 +1206,16 @@ void NodeMd2Draw(aNodeMd2 nodeMd2)
         glLoadMatrixf(transform);
 
         // статика или динамика?
-        isAnimated = ((param->minFrame != param->maxFrame) &&
+        isAnimated = (
+                      (param->minFrame != param->maxFrame) &&
                       (param->animSpeed != 0.0f) &&
-                      (mdl->header.numOfFrames > 1));
+                      (mdl->header.numOfFrames > 1) &&
+                      ((param->loop) ||
+                       // если loop не установлен и достигнут последний кадр, то объект считается static
+                       (!param->loop && ((param->animSpeed <  0.0f && param->numOfFrameNext > param->minFrame) ||
+                                         (param->animSpeed >= 0.0f && param->numOfFrameNext < param->maxFrame)))
+                      )
+                     );
 
         // animate
         if (isAnimated)
@@ -1176,13 +1231,15 @@ void NodeMd2Draw(aNodeMd2 nodeMd2)
                 if (param->animSpeed > 0.0f)
                 {
                     ++param->numOfFrameNext;
-                    if (param->numOfFrameNext > param->maxFrame)
+
+                    if ((param->numOfFrameNext > param->maxFrame) && (param->loop))
                         param->numOfFrameNext = param->minFrame;
                 }
                 if (param->animSpeed < 0.0f)
                 {
                     --param->numOfFrameNext;
-                    if (param->numOfFrameNext < param->minFrame)
+
+                    if ((param->numOfFrameNext < param->minFrame) && (param->loop))
                         param->numOfFrameNext = param->maxFrame;
                 }
 

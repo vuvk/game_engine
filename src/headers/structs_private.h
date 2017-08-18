@@ -29,6 +29,7 @@
 #include "texture.h"
 #include "material.h"
 #include "format_md2.h"
+#include "format_bsp.h"
 
 //#pragma pack(push, 1)
 
@@ -194,7 +195,8 @@ typedef struct
     float  animSpeed;
     float  interp;         // value of step (from 0.0f to 1.0f)
 
-    bool   visible;        // if not visible then not draw
+    bool  loop;           // looping of animation
+    bool  visible;        // if not visible then not draw
 
 } SParamMd2;
 
@@ -215,6 +217,81 @@ SDictionary* _meshesMd2;
 
 /* all md2-nodes here */
 SList* _nodesMd2;
+
+
+/* Mesh bsp */
+// bsp-меш с трансформациями и информацией о модели
+typedef struct
+{
+    struct  SHeaderOfClass;
+    struct  STransform3D;
+
+    char   fileName[MAX_PATH_LENGTH];
+
+    uint32  numOfVerts;       // The number of verts in the model
+    uint32  numOfEdges;
+    uint32  numOfFaces;       // The number of faces in the model
+    uint32  numOfLeaves;
+    uint32  numOfNodes;
+    uint32  numOfPlanes;
+    uint32  numOfTexInfo;
+    //uint32  numOfTextures;    // The number of texture maps
+    //uint32  numOfIndices;     // The number of indices for the model
+    //uint32  numOfLightmaps;   // The number of light maps
+
+    //int32*      indices;     // The object's indices for rendering
+    //SVertexBsp* vertices;    // The object's vertices
+    //SFaceBsp*   faces;       // The faces information of the object
+
+    SVertexBsp*  vertices;
+    SEdgeBsp*    edges;
+    SFaceBsp*    faces;
+    SLeafBsp*    leaves;
+    SNodeMapBsp* nodes;     // nodes for BSP tree
+    SPlaneBsp*   planes;    // Planes for BSP tree
+    STexInfoBsp* texInfo;
+
+    uint8*  visInfo;  // visibility data
+    uint32* faceEdgeTable;
+    uint16* leafFaceTable;
+
+    /*
+    // поверхности
+    faceDirectory : array of TBSPFaceDirectoryEntry;  // массив, хранящий ссылки по типу
+                                                      // поверхности на массив поверхностей
+    // обычные полигоны
+    numOfPolygonFaces : GLint;
+    polygonFaces : array of TBSPPolygonFace;
+
+    // меши (модели MD3)
+    numOfMeshFaces : GLint;
+    meshFaces : array of TBSPMeshFace;
+
+    // патчи
+    numOfPatches : GLint;
+    patches : array of TBSPBezierPatch;
+
+    // список ентитей
+    entityString : PChar;
+
+    // Leaves
+    numOfLeaves : GLint;
+    leaves : array of TBSPLeaf;
+
+    // leaf faces array
+    leafFaces : array of GLint;
+
+    numOfPlanes : GLint;
+    //planes : array of TPlane;
+    planes : array of TBSPPlane;
+
+    numOfNodes : GLint;
+    nodes : array of TBSPNode;
+
+
+    visData : TBSPVisData;
+    */
+} SMeshBsp;
 
 
 //-----------------------

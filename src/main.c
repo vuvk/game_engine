@@ -5,6 +5,7 @@
 #include "SDL2/SDL.h"
 
 #include "all_in_one.h"
+#include "structs_private.h"
 
 int main(int args, char* argv[])
 {
@@ -112,13 +113,13 @@ int main(int args, char* argv[])
 #endif // DEBUG
 
     aCamera cam = CameraCreate("test camera");
-    CameraPlacef(cam, 0, 0, 0, 0, 0, 0, 0, 1, 0);
+    CameraPlacev(cam, vZero3f, vZero3f, vUp3f);
 
     bool rotL    = false, rotR    = false;
     bool moveF   = false, moveB   = false;
     bool strafeL = false, strafeR = false;
 
-    void* meshBsp = NULL;
+    SMeshBsp* meshBsp = calloc(1, sizeof(SMeshBsp));
     RM_LoadMeshBsp("baseq2/maps/base1.bsp", &meshBsp);
 
     while (!quit)

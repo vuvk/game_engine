@@ -380,27 +380,27 @@ bool RM_LoadMeshMd2(const char* fileName, void** meshMd2)
 
     isLoaded = true;
 
-	result:
+result:
 
-        if (mesh->model != NULL)
-        {
-            free(mesh->model);
-            mesh->model = NULL;
-        }
+    if (mesh->model != NULL)
+    {
+        free(mesh->model);
+        mesh->model = NULL;
+    }
 
-        /* set model info to our mesh */
-        if (!isLoaded)
-        {
-            free(mdl);
-            mdl = NULL;
-        }
-        else
-            mesh->model = mdl;
+    /* set model info to our mesh */
+    if (!isLoaded)
+    {
+        free(mdl);
+        mdl = NULL;
+    }
+    else
+        mesh->model = mdl;
 
-        free(buffer);
-        buffer = NULL;
+    free(buffer);
+    buffer = NULL;
 
-        return isLoaded;
+    return isLoaded;
 }
 
 
@@ -413,12 +413,12 @@ bool RM_LoadMeshBsp(const char* fileName, void** meshBsp)
     }
 
     /*
-    if (meshBsp == NULL || !ObjectIsMeshMd2(*meshMd2))
+    if (meshBsp == NULL || !ObjectIsMeshBsp(*meshBsp))
         return false;
 
-    SMeshMd2* mesh = (SMeshMd2*)*meshMd2;
     */
 
+    SMeshBsp* mesh = (SMeshBsp*)*meshBsp;
     uint8* buffer = NULL;
     int32  bufSize = FileLoad(fileName, (void**)(&buffer));
     bool isLoaded = false;
@@ -432,7 +432,8 @@ bool RM_LoadMeshBsp(const char* fileName, void** meshBsp)
 
     SHeaderBsp header = {0};
 
-    SVector3f* vertices = NULL;
+    /*
+    SVertexBsp* vertices = NULL;
     uint32 numOfVerts = 0;
 
     SEdgeBsp* edges = NULL;
@@ -458,6 +459,7 @@ bool RM_LoadMeshBsp(const char* fileName, void** meshBsp)
     uint32* faceEdgeTable = NULL;
 
     uint16* leafFaceTable = NULL;
+    */
 
 	// Read the header data
 	memcpy(&header, buffer, sizeof(SHeaderBsp));
@@ -474,86 +476,98 @@ bool RM_LoadMeshBsp(const char* fileName, void** meshBsp)
     // читаем вершины
     // read vertices
     len = header.lump[BSP_VERTICES].length;
-    numOfVerts = len / sizeof(SVector3f);
-    vertices = malloc(len);
-    memcpy(vertices, buffer + header.lump[BSP_VERTICES].offset, len);
+    mesh->numOfVerts = len / sizeof(SVector3f);
+    free(mesh->vertices);
+    mesh->vertices = calloc(1, len);
+    memcpy(mesh->vertices, buffer + header.lump[BSP_VERTICES].offset, len);
     // переворачиваем оси
-    for (uint32 i = 0; i < numOfVerts; ++i)
+    for (uint32 i = 0; i < mesh->numOfVerts; ++i)
     {
-        Swap(&(vertices[i].y), &(vertices[i].z));
-        vertices[i].z = -vertices[i].z;
+        Swap(&(mesh->vertices[i].y), &(mesh->vertices[i].z));
+        mesh->vertices[i].z = -mesh->vertices[i].z;
     }
 
     // read edges
     len = header.lump[BSP_EDGES].length;
-    //numOfEdges = len / sizeof(SEdgeBsp);
-    edges = malloc(len);
-    memcpy(edges, buffer + header.lump[BSP_EDGES].offset, len);
+    mesh->numOfEdges = len / sizeof(SEdgeBsp);
+    free(mesh->edges);
+    mesh->edges = calloc(1, len);
+    memcpy(mesh->edges, buffer + header.lump[BSP_EDGES].offset, len);
 
     // read faces
     len = header.lump[BSP_FACES].length;
-    //numOfFaces = len / sizeof(SFaceBsp);
-    faces = malloc(len);
-    memcpy(faces, buffer + header.lump[BSP_FACES].offset, len);
+    mesh->numOfFaces = len / sizeof(SFaceBsp);
+    free(mesh->faces);
+    mesh->faces = calloc(1, len);
+    memcpy(mesh->faces, buffer + header.lump[BSP_FACES].offset, len);
 
     // read leaves
     len = header.lump[BSP_LEAVES].length;
-    //numOfLeaves = len / sizeof(SLeafBsp);
-    leaves = malloc(len);
-    memcpy(leaves, buffer + header.lump[BSP_LEAVES].offset, len);
+    mesh->numOfLeaves = len / sizeof(SLeafBsp);
+    free(mesh->leaves);
+    mesh->leaves = calloc(1, len);
+    memcpy(mesh->leaves, buffer + header.lump[BSP_LEAVES].offset, len);
 
     // read nodes
     len = header.lump[BSP_NODES].length;
-    //numOfNodes = len / sizeof(SNodeMapBsp);
-    nodes = malloc(len);
-    memcpy(nodes, buffer + header.lump[BSP_NODES].offset, len);
+    mesh->numOfNodes = len / sizeof(SNodeMapBsp);
+    free(mesh->nodes);
+    mesh->nodes = calloc(1, len);
+    memcpy(mesh->nodes, buffer + header.lump[BSP_NODES].offset, len);
 
     // read planes
     len = header.lump[BSP_PLANES].length;
-    //numOfPlanes = len / sizeof(SPlaneBsp);
-    planes = malloc(len);
-    memcpy(planes, buffer + header.lump[BSP_PLANES].offset, len);
+    mesh->numOfPlanes = len / sizeof(SPlaneBsp);
+    free(mesh->planes);
+    mesh->planes = calloc(1, len);
+    memcpy(mesh->planes, buffer + header.lump[BSP_PLANES].offset, len);
 
     // read texInfo
     len = header.lump[BSP_TEXINFO].length;
-    numOfTexInfo = len / sizeof(STexInfoBsp);
-    texInfo = malloc(len);
-    memcpy(texInfo, buffer + header.lump[BSP_TEXINFO].offset, len);
-    for (uint32 i = 0; i < numOfTexInfo; ++i)
-        printf("texture name = %s\n", texInfo[i].textureName);
+    mesh->numOfTexInfo = len / sizeof(STexInfoBsp);
+    free(mesh->texInfo);
+    mesh->texInfo = calloc(1, len);
+    memcpy(mesh->texInfo, buffer + header.lump[BSP_TEXINFO].offset, len);
+    //for (uint32 i = 0; i < mesh->numOfTexInfo; ++i)
+    //    printf("texture name = %s\n", mesh->texInfo[i].textureName);
 
     // read visInfo
     len = header.lump[BSP_VISIBILITY].length;
-    visInfo = malloc(len);
-    memcpy(visInfo, buffer + header.lump[BSP_VISIBILITY].offset, len);
+    free(mesh->visInfo);
+    mesh->visInfo = calloc(1, len);
+    memcpy(mesh->visInfo, buffer + header.lump[BSP_VISIBILITY].offset, len);
 
     // read face edge table
     len = header.lump[BSP_FACE_EDGE_TABLE].length;
-    faceEdgeTable = malloc(len);
-    memcpy(faceEdgeTable, buffer + header.lump[BSP_FACE_EDGE_TABLE].offset, len);
+    free(mesh->faceEdgeTable);
+    mesh->faceEdgeTable = malloc(len);
+    memcpy(mesh->faceEdgeTable, buffer + header.lump[BSP_FACE_EDGE_TABLE].offset, len);
 
     // read leaf face table
     len = header.lump[BSP_LEAF_FACE_TABLE].length;
-    leafFaceTable = malloc(len);
-    memcpy(leafFaceTable, buffer + header.lump[BSP_LEAF_FACE_TABLE].offset, len);
+    free(mesh->leafFaceTable);
+    mesh->leafFaceTable = malloc(len);
+    memcpy(mesh->leafFaceTable, buffer + header.lump[BSP_LEAF_FACE_TABLE].offset, len);
 
 
 
-	result :
+result :
 
-        free(buffer);
-        buffer = NULL;
+    free(buffer);
+    buffer = NULL;
 
-        free(vertices);
-        free(edges);
-        free(faces);
-        free(leaves);
-        free(nodes);
-        free(planes);
-        free(texInfo);
-        free(visInfo);
-        free(faceEdgeTable);
-        free(leafFaceTable);
+    /*
+    free(vertices);
+    free(edges);
+    free(faces);
+    free(leaves);
+    free(nodes);
+    free(planes);
+    free(texInfo);
+    free(visInfo);
+    free(faceEdgeTable);
+    free(leafFaceTable);
+    */
 
     return true;
 }

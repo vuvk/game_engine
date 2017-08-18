@@ -28,6 +28,7 @@
 #include "types.h"
 #include "vector.h"
 
+typedef SVector3f SVertexBsp;
 
 typedef struct
 {
@@ -96,7 +97,7 @@ typedef struct
 */
 typedef struct
 {
-    SVector3f  normal;      // A, B, C components of the plane equation
+    SVector3f  normal;    // A, B, C components of the plane equation
     float    distance;    // D component of the plane equation
     uint32   type;        // ?
 } SPlaneBsp;
@@ -202,7 +203,6 @@ typedef struct
 
 typedef struct
 {
-
     char    name[32];        // name of the texture
 
     uint32  width;           // width (in pixels) of the largest mipmap level
@@ -215,5 +215,4 @@ typedef struct
     uint32  flags;           // ?
     uint32  contents;        // ?
     uint32  value;           // ?
-
 } SHeaderWal;
