@@ -112,6 +112,8 @@ int main(int args, char* argv[])
     //TextTest();
 #endif // DEBUG
 
+    RenderPrintScreenModes();
+
     aCamera cam = CameraCreate("test camera");
     CameraPlacef(cam, 0, 0, 0, 0, 0, 0, 0, 1, 0);
 
