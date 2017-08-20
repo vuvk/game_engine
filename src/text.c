@@ -91,7 +91,7 @@ inline char* TextGetString(aText text)
     return ((SText*)text)->string;
 }
 
-bool TextGetPivot(aText text, float* x, float* y)
+bool TextGetPivotf(aText text, float* x, float* y)
 {
     IS_TEXT_VALID(text);
 
@@ -204,7 +204,7 @@ bool TextSetStringStatic(aText text, const char* string)
     return true;
 }
 
-inline bool TextSetPivot(aText text, float x, float y)
+inline bool TextSetPivotf(aText text, float x, float y)
 {
     IS_TEXT_VALID(text);
 
@@ -218,7 +218,7 @@ inline bool TextSetPivotv(aText text, SVector2f pivot)
 {
     IS_TEXT_VALID(text);
 
-    return TextSetPivot(text, pivot.x, pivot.y);
+    return TextSetPivotf(text, pivot.x, pivot.y);
 }
 
 inline bool TextSetPivotX(aText text, float x)
@@ -461,11 +461,11 @@ void TextTest()
     printf("--------test5--------\n");
     pivot = TextGetPivotv(text);
     assert(pivot.x == 0 && pivot.y == 0);
-    TextSetPivot(text, 10, 10);
+    TextSetPivotf(text, 10, 10);
     pivot = TextGetPivotv(text);
     assert(pivot.x == 10 && pivot.y == 10);
     pivot.x = pivot.y = 0;
-    TextGetPivot(text, &pivot.x, &pivot.y);
+    TextGetPivotf(text, &pivot.x, &pivot.y);
     assert(pivot.x == 10 && pivot.y == 10);
     pivot.x = pivot.y = 0;
     pivot.x = TextGetPivotX(text);

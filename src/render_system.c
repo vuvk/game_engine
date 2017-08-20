@@ -1,9 +1,3 @@
-/*#include <GL/gl.h>
-#include <GL/glu.h>
-#include <GL/glext.h>*/
-// because it's not in glext.h. Strange
-//#define GL_SHADING_LANGUAGE_VERSION 0x8B8C
-
 #include "SDL2/SDL.h"
 
 #include "types.h"
@@ -83,19 +77,72 @@ void RenderDestroy()
     _renderState = rsNotCreated;
 }
 
+
+SVector2i RenderGetMaxScreenResolutionv()
+{
+    SVector2i v = vZero2i;
+    RenderGetMaxScreenResolutioni(&(v.x), &(v.y));
+    return v;
+}
+
+void RenderGetMaxScreenResolutioni(int32* width, int32* height)
+{
+    int32 displayModeCount = SDL_GetNumDisplayModes(0);
+    if (displayModeCount < 1)
+        return;
+
+    int32 w = 0, h = 0;
+    SDL_DisplayMode mode;
+    for (int32 i = 0; i < displayModeCount; ++i)
+    {
+        if (SDL_GetDisplayMode(0, i, &mode) != 0)
+        {
+            LogWriteError("SDL_GetDisplayMode failed: %s\n", SDL_GetError());
+            return;
+        }
+
+        if (mode.w > w)
+            w = mode.w;
+        if (mode.h > h)
+            h = mode.h;
+    }
+
+    if (width != NULL)
+        *width = w;
+    if (height != NULL)
+        *height = h;
+}
+
+int32 RenderGetMaxScreenResolutionWidth()
+{
+    int32 width;
+    RenderGetMaxScreenResolutioni(&width, NULL);
+    return width;
+}
+
+int32 RenderGetMaxScreenResolutionHeight()
+{
+    int32 height;
+    RenderGetMaxScreenResolutioni(NULL, &height);
+    return height;
+}
+
 //system
 inline ERenderState RenderGetState()
 {
     return _renderState;
 }
+
 inline const char* RenderGetVendor()
 {
     return (const char*)glGetString(GL_VENDOR);
 }
+
 inline const char* RenderGetOpenGLVersion()
 {
     return (const char*)glGetString(GL_VERSION);
 }
+
 inline const char* RenderGetShaderVersion()
 {
     return (const char*)glGetString(GL_SHADING_LANGUAGE_VERSION);
@@ -125,4 +172,24 @@ void RenderPrintInfo()
     LogWriteMessage("OpenGL version : %s\n", RenderGetOpenGLVersion());
     LogWriteMessage("GLSL version : %s\n", RenderGetShaderVersion());
     LogWriteMessage("============================================\n");
+}
+
+void RenderPrintScreenModes()
+{
+    int32 displayModeCount = SDL_GetNumDisplayModes(0);
+    if (displayModeCount < 1)
+        return;
+
+    int32 w = 0, h = 0;
+    SDL_DisplayMode mode;
+    for (int32 i = 0; i < displayModeCount; ++i)
+    {
+        if (SDL_GetDisplayMode(0, i, &mode) != 0)
+        {
+            LogWriteError("SDL_GetDisplayMode failed: %s\n", SDL_GetError());
+            return;
+        }
+
+        LogWriteMessage("width\t%d\theight\t%d\trefresh rate\t%d\n", mode.w, mode.h, mode.refresh_rate);
+    }
 }

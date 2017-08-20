@@ -63,9 +63,16 @@ static void NodeMd2RecalculateParam(SParamMd2* param)
     SVertexMd2  vert1,  vert2;
     uint32      arrL = 0;   // длина буффера
 
-    bool isAnimated = ((param->minFrame != param->maxFrame) &&
+    bool isAnimated = (
+                       (param->minFrame != param->maxFrame) &&
                        (param->animSpeed != 0.0f) &&
-                       (mdl->header.numOfFrames > 1));
+                       (mdl->header.numOfFrames > 1) &&
+                       ((param->loop) ||
+                        // если loop не установлен и достигнут последний кадр, то объект считается static
+                        (!param->loop && ((param->animSpeed <  0.0f && param->numOfFrameNext > param->minFrame) ||
+                                          (param->animSpeed >= 0.0f && param->numOfFrameNext < param->maxFrame)))
+                       )
+                      );
 
     for (int32 i = 0; i < mdl->header.numOfTris; ++i)
     {
@@ -240,6 +247,8 @@ bool NodeMd2AddLinkToMeshMd2(aNodeMd2 nodeMd2, aMeshMd2 meshMd2)
     bool result = ListAddElement(((SNodeMd2*)nodeMd2)->params, param);
     if (!result)
         free(param);
+    else
+        NodeMd2RecalculateParam(param);
 
     return result;
 }
@@ -313,16 +322,18 @@ void NodesMd2GetByName(const char* name, SList* results)
 }
 
 
-bool NodeMd2GetPivot(aNodeMd2 nodeMd2, float* x, float* y, float* z)
+bool NodeMd2GetPivotf(aNodeMd2 nodeMd2, float* x, float* y, float* z)
 {
     IS_NODEMD2_VALID(nodeMd2);
 
+    SNodeMd2* node = (SNodeMd2*)nodeMd2;
+
     if (x != NULL)
-        *x = ((SNodeMd2*)nodeMd2)->pivot.x;
+        *x = node->pivot.x;
     if (y != NULL)
-        *y = ((SNodeMd2*)nodeMd2)->pivot.y;
+        *y = node->pivot.y;
     if (z != NULL)
-        *z = ((SNodeMd2*)nodeMd2)->pivot.z;
+        *z = node->pivot.z;
 
     return true;
 }
@@ -356,16 +367,18 @@ inline float NodeMd2GetPivotZ(aNodeMd2 nodeMd2)
     return ((SNodeMd2*)nodeMd2)->pivot.z;
 }
 
-bool NodeMd2GetPos(aNodeMd2 nodeMd2, float* x, float* y, float* z)
+bool NodeMd2GetPosf(aNodeMd2 nodeMd2, float* x, float* y, float* z)
 {
     IS_NODEMD2_VALID(nodeMd2);
 
+    SNodeMd2* node = (SNodeMd2*)nodeMd2;
+
     if (x != NULL)
-        *x = ((SNodeMd2*)nodeMd2)->position.x;
+        *x = node->position.x;
     if (y != NULL)
-        *y = ((SNodeMd2*)nodeMd2)->position.y;
+        *y = node->position.y;
     if (z != NULL)
-        *z = ((SNodeMd2*)nodeMd2)->position.z;
+        *z = node->position.z;
 
     return true;
 }
@@ -399,16 +412,18 @@ inline float NodeMd2GetPosZ(aNodeMd2 nodeMd2)
     return ((SNodeMd2*)nodeMd2)->position.z;
 }
 
-bool NodeMd2GetScale(aNodeMd2 nodeMd2, float* x, float* y, float* z)
+bool NodeMd2GetScalef(aNodeMd2 nodeMd2, float* x, float* y, float* z)
 {
     IS_NODEMD2_VALID(nodeMd2);
 
+    SNodeMd2* node = (SNodeMd2*)nodeMd2;
+
     if (x != NULL)
-        *x = ((SNodeMd2*)nodeMd2)->scale.x;
+        *x = node->scale.x;
     if (y != NULL)
-        *y = ((SNodeMd2*)nodeMd2)->scale.y;
+        *y = node->scale.y;
     if (z != NULL)
-        *z = ((SNodeMd2*)nodeMd2)->scale.z;
+        *z = node->scale.z;
 
     return true;
 }
@@ -585,7 +600,7 @@ inline bool NodeMd2SetName(aNodeMd2 nodeMd2, const char* name)
 }
 
 
-bool NodeMd2SetPivot(aNodeMd2 nodeMd2, float x, float y, float z)
+bool NodeMd2SetPivotf(aNodeMd2 nodeMd2, float x, float y, float z)
 {
     IS_NODEMD2_VALID(nodeMd2);
 
@@ -647,7 +662,7 @@ inline bool NodeMd2SetPivotZ(aNodeMd2 nodeMd2, float z)
     return true;
 }
 
-bool NodeMd2SetPos(aNodeMd2 nodeMd2, float x, float y, float z)
+bool NodeMd2SetPosf(aNodeMd2 nodeMd2, float x, float y, float z)
 {
     IS_NODEMD2_VALID(nodeMd2);
 
@@ -709,7 +724,7 @@ inline bool NodeMd2SetPosZ(aNodeMd2 nodeMd2, float z)
     return true;
 }
 
-bool NodeMd2SetScale(aNodeMd2 nodeMd2, float x, float y, float z)
+bool NodeMd2SetScalef(aNodeMd2 nodeMd2, float x, float y, float z)
 {
     IS_NODEMD2_VALID(nodeMd2);
 
@@ -1007,8 +1022,16 @@ bool NodeMd2SetIntervalEx(aNodeMd2 nodeMd2, int32 startFrame, int32 endFrame, ui
     param->minFrame = startFrame;
     param->maxFrame = endFrame;
 
-    param->numOfFramePrev = startFrame;
-    param->numOfFrameNext = startFrame++;
+    if (param->animSpeed >= 0.0f)
+    {
+        param->numOfFramePrev = startFrame;
+        param->numOfFrameNext = startFrame++;
+    }
+    else
+    {
+        param->numOfFramePrev = endFrame--;
+        param->numOfFrameNext = endFrame;
+    }
 
     NodeMd2RecalculateParam(param);
 
@@ -1244,7 +1267,9 @@ void NodeMd2Draw(aNodeMd2 nodeMd2)
                 }
 
                 // calculate buffers
-                NodeMd2RecalculateParam (param);
+                if ((param->numOfFrameNext >= param->minFrame) &&
+                    (param->numOfFrameNext <= param->maxFrame))
+                    NodeMd2RecalculateParam (param);
             }
 
             // now draw
@@ -1279,7 +1304,6 @@ void NodeMd2Draw(aNodeMd2 nodeMd2)
             glVertexPointer(3, GL_FLOAT, 0, param->vbuf_prev);
             glNormalPointer(   GL_FLOAT, 0, param->nbuf_prev);
         }
-
         glTexCoordPointer(2, GL_FLOAT, 0, mdl->texCoords);
         glDrawArrays(GL_TRIANGLES, 0, numOfVerts);
     }

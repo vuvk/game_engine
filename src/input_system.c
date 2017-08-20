@@ -206,6 +206,11 @@ inline bool InputIsMouseButtonUp()
     return (_mouseState & MOUSE_BUTTON_UP);
 }
 
+inline bool InputGetMouseCursorShowing()
+{
+    return (SDL_ShowCursor(SDL_QUERY));
+}
+
 inline SVector2i InputGetMousePos()
 {
     return _mousePosition;
@@ -239,6 +244,11 @@ inline bool InputIsMouseWheelUp()
 inline bool InputIsMouseWheelDown()
 {
     return (_mouseWheelDirection < 0);
+}
+
+inline void InputSetMouseCursorShowing(bool show)
+{
+    SDL_ShowCursor(show);
 }
 
 inline void InputSetMousePosi(int32 mousePositionX, int32 mousePositionY)

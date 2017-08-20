@@ -37,7 +37,7 @@ aFont TextGetFont(aText text);
 /** get dynamic text from class */
 char* TextGetString(aText text);
 /** get pivot point of text */
-bool TextGetPivot(aText text, float* x, float* y);
+bool TextGetPivotf(aText text, float* x, float* y);
 SVector2f TextGetPivotv(aText text);
 float TextGetPivotX(aText text);
 float TextGetPivotY(aText text);
@@ -61,7 +61,7 @@ bool TextSetString(aText text, const char* string);
 /** set static text - fast draw */
 bool TextSetStringStatic(aText text, const char* string);
 /** set pivot point of text */
-bool TextSetPivot(aText text, float x, float y);
+bool TextSetPivotf(aText text, float x, float y);
 bool TextSetPivotv(aText text, SVector2f pivot);
 bool TextSetPivotX(aText text, float x);
 bool TextSetPivotY(aText text, float y);

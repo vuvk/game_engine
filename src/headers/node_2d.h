@@ -61,17 +61,17 @@ bool Node2DIsVisible(aNode2D node2D);
 
 /* get transforms */
 /** get pivot point of node */
-bool Node2DGetPivot(aNode2D node2D, float* x, float* y);
+bool Node2DGetPivotf(aNode2D node2D, float* x, float* y);
 SVector2f Node2DGetPivotv(aNode2D node2D);
 float Node2DGetPivotX(aNode2D node2D);
 float Node2DGetPivotY(aNode2D node2D);
 /** get position of node */
-bool Node2DGetPos(aNode2D node2D, float* x, float* y);
+bool Node2DGetPosf(aNode2D node2D, float* x, float* y);
 SVector2f Node2DGetPosv(aNode2D node2D);
 float Node2DGetPosX(aNode2D node2D);
 float Node2DGetPosY(aNode2D node2D);
 /** get scale of node */
-bool Node2DGetScale(aNode2D node2D, float* x, float* y);
+bool Node2DGetScalef(aNode2D node2D, float* x, float* y);
 SVector2f Node2DGetScalev(aNode2D node2D);
 float Node2DGetScaleX(aNode2D node2D);
 float Node2DGetScaleY(aNode2D node2D);
@@ -110,17 +110,17 @@ bool Node2DSetVisible(aNode2D node2D, bool isVisible);
 
 /* set transforms */
 /** set pivot point of node */
-bool Node2DSetPivot(aNode2D node2D, float x, float y);
+bool Node2DSetPivotf(aNode2D node2D, float x, float y);
 bool Node2DSetPivotv(aNode2D node2D, SVector2f pivot);
 bool Node2DSetPivotX(aNode2D node2D, float x);
 bool Node2DSetPivotY(aNode2D node2D, float y);
 /** set position of node */
-bool Node2DSetPos(aNode2D node2D, float x, float y);
+bool Node2DSetPosf(aNode2D node2D, float x, float y);
 bool Node2DSetPosv(aNode2D node2D, SVector2f position);
 bool Node2DSetPosX(aNode2D node2D, float x);
 bool Node2DSetPosY(aNode2D node2D, float y);
 /** set scale of node */
-bool Node2DSetScale(aNode2D node2D, float x, float y);
+bool Node2DSetScalef(aNode2D node2D, float x, float y);
 bool Node2DSetScalev(aNode2D node2D, SVector2f scale);
 bool Node2DSetScaleX(aNode2D node2D, float x);
 bool Node2DSetScaleY(aNode2D node2D, float y);

@@ -28,9 +28,9 @@
 #include "vector.h"
 
 // These are the needed defines for the max values when loading .MD2 files
-#define MD2_MAX_TRIANGLES   4096
-#define MD2_MAX_VERTICES	2048
-#define MD2_MAX_TEXCOORDS	2048
+#define MD2_MAX_TRIANGLES   2048
+#define MD2_MAX_VERTICES	MD2_MAX_TRIANGLES*3
+#define MD2_MAX_TEXCOORDS	MD2_MAX_TRIANGLES*3
 #define MD2_MAX_FRAMES		512
 #define MD2_MAX_SKINS		32
 #define MD2_MAX_FRAME_NAME  16

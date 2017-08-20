@@ -197,7 +197,7 @@ inline bool Node2DIsVisible(aNode2D node2D)
     return ((SNode2D*)node2D)->visible;
 }
 
-bool Node2DGetPivot(aNode2D node2D, float* x, float* y)
+bool Node2DGetPivotf(aNode2D node2D, float* x, float* y)
 {
     IS_NODE2D_VALID(node2D);
 
@@ -231,7 +231,7 @@ float Node2DGetPivotY(aNode2D node2D)
     return ((SNode2D*)node2D)->pivot.y;
 }
 
-bool Node2DGetPos(aNode2D node2D, float* x, float* y)
+bool Node2DGetPosf(aNode2D node2D, float* x, float* y)
 {
     IS_NODE2D_VALID(node2D);
 
@@ -265,7 +265,7 @@ float Node2DGetPosY(aNode2D node2D)
     return ((SNode2D*)node2D)->position.y;
 }
 
-bool Node2DGetScale(aNode2D node2D, float* x, float* y)
+bool Node2DGetScalef(aNode2D node2D, float* x, float* y)
 {
     IS_NODE2D_VALID(node2D);
 
@@ -376,7 +376,7 @@ inline bool Node2DSetVisible(aNode2D node2D, bool isVisible)
     return true;
 }
 
-bool Node2DSetPivot(aNode2D node2D, float x, float y)
+bool Node2DSetPivotf(aNode2D node2D, float x, float y)
 {
     IS_NODE2D_VALID(node2D);
 
@@ -425,7 +425,7 @@ bool Node2DSetPivotY(aNode2D node2D, float y)
     return true;
 }
 
-bool Node2DSetPos(aNode2D node2D, float x, float y)
+bool Node2DSetPosf(aNode2D node2D, float x, float y)
 {
     IS_NODE2D_VALID(node2D);
 
@@ -474,7 +474,7 @@ bool Node2DSetPosY(aNode2D node2D, float y)
     return true;
 }
 
-bool Node2DSetScale(aNode2D node2D, float x, float y)
+bool Node2DSetScalef(aNode2D node2D, float x, float y)
 {
     IS_NODE2D_VALID(node2D);
 

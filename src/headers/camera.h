@@ -34,11 +34,43 @@ aCamera CameraCreate(const char* name);
 /** destroy a camera */
 void CameraDestroy(aCamera* camera);
 
+/** get name of camera */
+const char* CameraGetName(aCamera camera);
+/* get transforms */
+/** get position of camera */
+bool CameraGetPosf(aCamera camera, float* x, float* y, float* z);
+SVector3f CameraGetPosv(aCamera camera);
+float CameraGetPosX(aCamera camera);
+float CameraGetPosY(aCamera camera);
+float CameraGetPosZ(aCamera camera);
+/** get target of camera */
+bool CameraGetTargetf(aCamera camera, float* x, float* y, float* z);
+SVector3f CameraGetTargetv(aCamera camera);
+float CameraGetTargetX(aCamera camera);
+float CameraGetTargetY(aCamera camera);
+float CameraGetTargetZ(aCamera camera);
+/** get up vector of camera */
+bool CameraGetUpVectorf(aCamera camera, float* x, float* y, float* z);
+SVector3f CameraGetUpVectorv(aCamera camera);
+float CameraGetUpVectorX(aCamera camera);
+float CameraGetUpVectorY(aCamera camera);
+float CameraGetUpVectorZ(aCamera camera);
+
+
+/** return true if pointer is camera */
+bool ObjectIsCamera(void* object);
+/* exit from function if pointer is invalid */
+#define IS_CAMERA_VALID(camera)        \
+        if (!ObjectIsCamera(camera))   \
+            return 0;
+
+
+
 // Тут изменяется положение, направление и верт. вектор камеры.
-bool CameraPlacev (aCamera camera, SVector3f position, SVector3f view, SVector3f upVector);
+bool CameraPlacev (aCamera camera, SVector3f position, SVector3f target, SVector3f upVector);
 bool CameraPlacef (aCamera camera,
                    float positionX, float positionY, float positionZ,
-                   float viewX,     float viewY,     float viewZ,
+                   float targetX,   float targetY,   float targetZ,
                    float upVectorX, float upVectorY, float upVectorZ);
 // Эта ф-я вращает камеру вокруг позиции в зависимости от переданных параметров.
 bool CameraRotatef(aCamera camera, float angle, float x, float y, float z);
@@ -50,9 +82,3 @@ bool CameraStrafe(aCamera camera, float speed);
 /** change view direction of camera by nouse */
 bool CameraSetViewByMouse(aCamera camera);
 
-/** return true if pointer is camera */
-bool ObjectIsCamera(void* object);
-/* exit from function if pointer is invalid */
-#define IS_CAMERA_VALID(camera)        \
-        if (!ObjectIsCamera(camera))   \
-            return 0;

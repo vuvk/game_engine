@@ -105,7 +105,7 @@ bool MeshMd2LoadFromFile (aMeshMd2 meshMd2, const char* fileName)
 
     if (!FileExists(fileName))
     {
-        LogWriteError("File '%s' is not exists!\n", fileName);
+        LogWriteError("File '%s' doesn't exist!\n", fileName);
         return false;
     }
 
@@ -202,7 +202,7 @@ inline aMeshMd2 MeshMd2GetByName(const char* name)
     return DictionaryGetValueByKey(_meshesMd2, name);
 }
 
-bool MeshMd2GetPivot(aMeshMd2 meshMd2, float* x, float* y, float* z)
+bool MeshMd2GetPivotf(aMeshMd2 meshMd2, float* x, float* y, float* z)
 {
     IS_MESHMD2_VALID(meshMd2);
 
@@ -245,7 +245,7 @@ inline float MeshMd2GetPivotZ(aMeshMd2 meshMd2)
     return ((SMeshMd2*)meshMd2)->pivot.z;
 }
 
-bool MeshMd2GetPos(aMeshMd2 meshMd2, float* x, float* y, float* z)
+bool MeshMd2GetPosf(aMeshMd2 meshMd2, float* x, float* y, float* z)
 {
     IS_MESHMD2_VALID(meshMd2);
 
@@ -288,7 +288,7 @@ inline float MeshMd2GetPosZ(aMeshMd2 meshMd2)
     return ((SMeshMd2*)meshMd2)->position.z;
 }
 
-bool MeshMd2GetScale(aMeshMd2 meshMd2, float* x, float* y, float* z)
+bool MeshMd2GetScalef(aMeshMd2 meshMd2, float* x, float* y, float* z)
 {
     IS_MESHMD2_VALID(meshMd2);
 

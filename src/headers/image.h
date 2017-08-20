@@ -36,7 +36,7 @@ void ImageDestroy(aImage* image);
 /** get name of image */
 char* ImageGetName(aImage image);
 /** get pivot point of image */
-bool ImageGetPivot(aImage image, float* x, float* y);
+bool ImageGetPivotf(aImage image, float* x, float* y);
 SVector2f ImageGetPivotv(aImage image);
 float ImageGetPivotX(aImage image);
 float ImageGetPivotY(aImage image);
@@ -64,7 +64,7 @@ bool ObjectIsImage(void* object);
 /** set name of image */
 bool ImageSetName(aImage image, const char* name);
 /** set pivot point of image */
-bool ImageSetPivot(aImage image, float x, float y);
+bool ImageSetPivotf(aImage image, float x, float y);
 bool ImageSetPivotv(aImage image, SVector2f pivot);
 bool ImageSetPivotX(aImage image, float x);
 bool ImageSetPivotY(aImage image, float y);

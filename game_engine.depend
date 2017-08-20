@@ -1715,7 +1715,7 @@
 	"dictionary.h"
 	"list.h"
 
-1502815806 source:b:\mein_docs\my_progs\c\game_engine\src\camera.c
+1503220100 source:b:\mein_docs\my_progs\c\game_engine\src\camera.c
 	<stdio.h>
 	<stdlib.h>
 	"utils.h"
@@ -1789,7 +1789,7 @@
 1502795122 b:\mein_docs\my_progs\c\game_engine\src\headers\matrix.h
 	"vector.h"
 
-1503054934 b:\mein_docs\my_progs\c\game_engine\src\headers\structs_private.h
+1503220005 b:\mein_docs\my_progs\c\game_engine\src\headers\structs_private.h
 	<stdio.h>
 	"defines.h"
 	"list.h"
@@ -2104,7 +2104,7 @@
 	<assert.h>
 	"texture.h"
 
-1502900209 b:\mein_docs\my_progs\c\game_engine\src\headers\format_md2.h
+1503218574 b:\mein_docs\my_progs\c\game_engine\src\headers\format_md2.h
 	"types.h"
 	"vector.h"
 
@@ -2112,19 +2112,19 @@
 	"types.h"
 	"vector.h"
 
-1502900444 b:\mein_docs\my_progs\c\game_engine\src\headers\camera.h
+1503220133 b:\mein_docs\my_progs\c\game_engine\src\headers\camera.h
 	"types.h"
 
 1502795206 b:\mein_docs\my_progs\c\game_engine\src\headers\window_system.h
 	"SDL2/SDL.h"
 	"types.h"
 
-1502795089 b:\mein_docs\my_progs\c\game_engine\src\headers\input_system.h
+1503207652 b:\mein_docs\my_progs\c\game_engine\src\headers\input_system.h
 	"SDL2/SDL.h"
 	"types.h"
 	"vector.h"
 
-1502795891 b:\mein_docs\my_progs\c\game_engine\src\headers\render_system.h
+1503210360 b:\mein_docs\my_progs\c\game_engine\src\headers\render_system.h
 	"types.h"
 	"matrix.h"
 	"GL/glew.h"
@@ -2214,28 +2214,28 @@
 	"texture.h"
 	<assert.h>
 
-1502795082 b:\mein_docs\my_progs\c\game_engine\src\headers\image.h
+1503218919 b:\mein_docs\my_progs\c\game_engine\src\headers\image.h
 	"defines.h"
 	"types.h"
 	"texture.h"
 	"material.h"
 	<assert.h>
 
-1502795175 b:\mein_docs\my_progs\c\game_engine\src\headers\text.h
+1503219027 b:\mein_docs\my_progs\c\game_engine\src\headers\text.h
 	"defines.h"
 	"font.h"
 	<assert.h>
 
-1502795132 b:\mein_docs\my_progs\c\game_engine\src\headers\node_2d.h
+1503218945 b:\mein_docs\my_progs\c\game_engine\src\headers\node_2d.h
 	"defines.h"
 	"list.h"
 	"types.h"
 	"image.h"
 	"text.h"
 
-1502795127 b:\mein_docs\my_progs\c\game_engine\src\headers\mesh_md2.h
+1503218881 b:\mein_docs\my_progs\c\game_engine\src\headers\mesh_md2.h
 
-1503051805 b:\mein_docs\my_progs\c\game_engine\src\headers\node_md2.h
+1503218805 b:\mein_docs\my_progs\c\game_engine\src\headers\node_md2.h
 	"defines.h"
 	"list.h"
 	"types.h"
@@ -2291,7 +2291,7 @@
 	"image.h"
 	"font.h"
 
-1502791390 source:b:\mein_docs\my_progs\c\game_engine\src\image.c
+1503219043 source:b:\mein_docs\my_progs\c\game_engine\src\image.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -2307,7 +2307,7 @@
 	"font.h"
 	"text.h"
 
-1502815279 source:b:\mein_docs\my_progs\c\game_engine\src\input_system.c
+1503207846 source:b:\mein_docs\my_progs\c\game_engine\src\input_system.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -2357,7 +2357,7 @@
 	"matrix.h"
 	"types.h"
 
-1502277600 source:b:\mein_docs\my_progs\c\game_engine\src\mesh_md2.c
+1503218881 source:b:\mein_docs\my_progs\c\game_engine\src\mesh_md2.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -2373,7 +2373,7 @@
 	"engine.h"
 	"mesh_md2.h"
 
-1501673277 source:b:\mein_docs\my_progs\c\game_engine\src\node_2d.c
+1503218983 source:b:\mein_docs\my_progs\c\game_engine\src\node_2d.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -2387,7 +2387,7 @@
 	"window_system.h"
 	"node_2d.h"
 
-1503052564 source:b:\mein_docs\my_progs\c\game_engine\src\node_md2.c
+1503219207 source:b:\mein_docs\my_progs\c\game_engine\src\node_md2.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -2407,9 +2407,7 @@
 1502795001 b:\mein_docs\my_progs\c\game_engine\src\headers\anorms.h
 	"vector.h"
 
-1502643437 source:b:\mein_docs\my_progs\c\game_engine\src\render_system.c
-	<GL/glu.h>
-	<GL/glext.h>
+1503210498 source:b:\mein_docs\my_progs\c\game_engine\src\render_system.c
 	"SDL2/SDL.h"
 	"types.h"
 	"matrix.h"
@@ -2418,7 +2416,7 @@
 	"render_system.h"
 	"window_system.h"
 
-1503055982 source:b:\mein_docs\my_progs\c\game_engine\src\resource_manager.c
+1503067551 source:b:\mein_docs\my_progs\c\game_engine\src\resource_manager.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -2499,7 +2497,7 @@
 
 1502795158 b:\mein_docs\my_progs\c\game_engine\src\headers\scene_manager.h
 
-1501663909 source:b:\mein_docs\my_progs\c\game_engine\src\text.c
+1503219052 source:b:\mein_docs\my_progs\c\game_engine\src\text.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -2555,4 +2553,39 @@
 	"render_system.h"
 	"defines.h"
 	"engine.h"
+
+1503218839 source:b:\mein_docs\my_progs\c\game_engine\src\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	"SDL2/SDL.h"
+	"all_in_one.h"
+	"structs_private.h"
+
+1502794984 b:\mein_docs\my_progs\c\game_engine\src\headers\all_in_one.h
+	"types.h"
+	"color.h"
+	"matrix.h"
+	"vector.h"
+	"texture.h"
+	"material.h"
+	"font.h"
+	"mesh_md2.h"
+	"text.h"
+	"image.h"
+	"camera.h"
+	"engine.h"
+	"file_system.h"
+	"input_system.h"
+	"log_system.h"
+	"render_system.h"
+	"window_system.h"
+	"gui_manager.h"
+	"resource_manager.h"
+	"scene_manager.h"
+	"node_2d.h"
+	"node_md2.h"
+	"utils.h"
+	"dictionary.h"
+	"list.h"
 

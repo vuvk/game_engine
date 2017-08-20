@@ -42,19 +42,19 @@ aMeshMd2 MeshMd2GetByName(const char* name);
 
 /* get transforms */
 /** get pivot point of mesh */
-bool MeshMd2GetPivot(aMeshMd2 meshMd2, float* x, float* y, float* z);
+bool MeshMd2GetPivotf(aMeshMd2 meshMd2, float* x, float* y, float* z);
 SVector3f MeshMd2GetPivotv(aMeshMd2 meshMd2);
 float MeshMd2GetPivotX(aMeshMd2 meshMd2);
 float MeshMd2GetPivotY(aMeshMd2 meshMd2);
 float MeshMd2GetPivotZ(aMeshMd2 meshMd2);
 /** get position of mesh */
-bool MeshMd2GetPos(aMeshMd2 meshMd2, float* x, float* y, float* z);
+bool MeshMd2GetPosf(aMeshMd2 meshMd2, float* x, float* y, float* z);
 SVector3f MeshMd2GetPosv(aMeshMd2 meshMd2);
 float MeshMd2GetPosX(aMeshMd2 meshMd2);
 float MeshMd2GetPosY(aMeshMd2 meshMd2);
 float MeshMd2GetPosZ(aMeshMd2 meshMd2);
 /** get scale of mesh */
-bool MeshMd2GetScale(aMeshMd2 meshMd2, float* x, float* y, float* z);
+bool MeshMd2GetScalef(aMeshMd2 meshMd2, float* x, float* y, float* z);
 SVector3f MeshMd2GetScalev(aMeshMd2 meshMd2);
 float MeshMd2GetScaleX(aMeshMd2 meshMd2);
 float MeshMd2GetScaleY(aMeshMd2 meshMd2);
@@ -80,19 +80,19 @@ bool MeshMd2SetName(aMeshMd2 meshMd2, const char* name);
 
 /* set transforms */
 /** set pivot point of mesh */
-bool MeshMd2SetPivot(aMeshMd2 meshMd2, float x, float y, float z);
+bool MeshMd2SetPivotf(aMeshMd2 meshMd2, float x, float y, float z);
 bool MeshMd2SetPivotv(aMeshMd2 meshMd2, SVector3f pivot);
 bool MeshMd2SetPivotX(aMeshMd2 meshMd2, float x);
 bool MeshMd2SetPivotY(aMeshMd2 meshMd2, float y);
 bool MeshMd2SetPivotZ(aMeshMd2 meshMd2, float z);
 /** set position of mesh */
-bool MeshMd2SetPos(aMeshMd2 meshMd2, float x, float y, float z);
+bool MeshMd2SetPosf(aMeshMd2 meshMd2, float x, float y, float z);
 bool MeshMd2SetPosv(aMeshMd2 meshMd2, SVector3f position);
 bool MeshMd2SetPosX(aMeshMd2 meshMd2, float x);
 bool MeshMd2SetPosY(aMeshMd2 meshMd2, float y);
 bool MeshMd2SetPosZ(aMeshMd2 meshMd2, float z);
 /** set scale of mesh */
-bool MeshMd2SetScale(aMeshMd2 meshMd2, float x, float y, float z);
+bool MeshMd2SetScalef(aMeshMd2 meshMd2, float x, float y, float z);
 bool MeshMd2SetScalev(aMeshMd2 meshMd2, SVector3f scale);
 bool MeshMd2SetScaleX(aMeshMd2 meshMd2, float x);
 bool MeshMd2SetScaleY(aMeshMd2 meshMd2, float y);

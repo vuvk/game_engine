@@ -51,6 +51,8 @@ bool InputIsMouseMove();
 bool InputIsMouseButtonDown();
 /** Is any mouse button up? */
 bool InputIsMouseButtonUp();
+/** get cursor showing */
+bool InputGetMouseCursorShowing();
 /** get mouse position */
 SVector2i InputGetMousePos();
 int32 InputGetMousePosX();
@@ -61,6 +63,9 @@ bool InputIsMouseWheel();
 int32 InputGetMouseWheelDir();
 bool InputIsMouseWheelUp();
 bool InputIsMouseWheelDown();
+
+/** set cursor showing */
+void InputSetMouseCursorShowing(bool show);
 /** set mouse position */
 void InputSetMousePosi(int32 mousePositionX, int32 mousePositionY);
 void InputSetMousePosv(SVector2i mousePosition);

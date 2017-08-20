@@ -68,7 +68,7 @@ inline char* ImageGetName(aImage image)
     return DictionaryGetKeyByValue(_images, image);
 }
 
-bool ImageGetPivot(aImage image, float* x, float* y)
+bool ImageGetPivotf(aImage image, float* x, float* y)
 {
     IS_IMAGE_VALID(image);
 
@@ -184,7 +184,7 @@ inline bool ImageSetName(aImage image, const char* name)
     return DictionarySetKeyByValue(_images, image, name);
 }
 
-inline bool ImageSetPivot(aImage image, float x, float y)
+inline bool ImageSetPivotf(aImage image, float x, float y)
 {
     IS_IMAGE_VALID(image);
 
@@ -196,7 +196,7 @@ inline bool ImageSetPivot(aImage image, float x, float y)
 
 inline bool ImageSetPivotv(aImage image, SVector2f pivot)
 {
-    return ImageSetPivot(image, pivot.x, pivot.y);
+    return ImageSetPivotf(image, pivot.x, pivot.y);
 }
 
 inline bool ImageSetPivotX(aImage image, float x)
@@ -559,11 +559,11 @@ void ImageTest()
     printf("--------test6--------\n");
     pivot = ImageGetPivotv(image);
     assert(pivot.x == 0 && pivot.y == 0);
-    ImageSetPivot(image, 10, 10);
+    ImageSetPivotf(image, 10, 10);
     pivot = ImageGetPivotv(image);
     assert(pivot.x == 10 && pivot.y == 10);
     pivot.x = pivot.y = 0;
-    ImageGetPivot(image, &pivot.x, &pivot.y);
+    ImageGetPivotf(image, &pivot.x, &pivot.y);
     assert(pivot.x == 10 && pivot.y == 10);
     pivot.x = pivot.y = 0;
     pivot.x = ImageGetPivotX(image);

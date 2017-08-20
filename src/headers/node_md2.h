@@ -52,19 +52,19 @@ bool NodeMd2IsVisible(aNodeMd2 nodeMd2);
 
 /* get transforms */
 /** get pivot point of node */
-bool NodeMd2GetPivot(aNodeMd2 nodeMd2, float* x, float* y, float* z);
+bool NodeMd2GetPivotf(aNodeMd2 nodeMd2, float* x, float* y, float* z);
 SVector3f NodeMd2GetPivotv(aNodeMd2 nodeMd2);
 float NodeMd2GetPivotX(aNodeMd2 nodeMd2);
 float NodeMd2GetPivotY(aNodeMd2 nodeMd2);
 float NodeMd2GetPivotZ(aNodeMd2 nodeMd2);
 /** get position of node */
-bool NodeMd2GetPos(aNodeMd2 nodeMd2, float* x, float* y, float* z);
+bool NodeMd2GetPosf(aNodeMd2 nodeMd2, float* x, float* y, float* z);
 SVector3f NodeMd2GetPosv(aNodeMd2 nodeMd2);
 float NodeMd2GetPosX(aNodeMd2 nodeMd2);
 float NodeMd2GetPosY(aNodeMd2 nodeMd2);
 float NodeMd2GetPosZ(aNodeMd2 nodeMd2);
 /** get scale of node */
-bool NodeMd2GetScale(aNodeMd2 nodeMd2, float* x, float* y, float* z);
+bool NodeMd2GetScalef(aNodeMd2 nodeMd2, float* x, float* y, float* z);
 SVector3f NodeMd2GetScalev(aNodeMd2 nodeMd2);
 float NodeMd2GetScaleX(aNodeMd2 nodeMd2);
 float NodeMd2GetScaleY(aNodeMd2 nodeMd2);
@@ -114,19 +114,19 @@ bool NodeMd2SetName(aNodeMd2 nodeMd2, const char* name);
 
 /* set transforms */
 /** set pivot point of node */
-bool NodeMd2SetPivot(aNodeMd2 nodeMd2, float x, float y, float z);
+bool NodeMd2SetPivotf(aNodeMd2 nodeMd2, float x, float y, float z);
 bool NodeMd2SetPivotv(aNodeMd2 nodeMd2, SVector3f pivot);
 bool NodeMd2SetPivotX(aNodeMd2 nodeMd2, float x);
 bool NodeMd2SetPivotY(aNodeMd2 nodeMd2, float y);
 bool NodeMd2SetPivotZ(aNodeMd2 nodeMd2, float z);
 /** set position of node */
-bool NodeMd2SetPos(aNodeMd2 nodeMd2, float x, float y, float z);
+bool NodeMd2SetPosf(aNodeMd2 nodeMd2, float x, float y, float z);
 bool NodeMd2SetPosv(aNodeMd2 nodeMd2, SVector3f position);
 bool NodeMd2SetPosX(aNodeMd2 nodeMd2, float x);
 bool NodeMd2SetPosY(aNodeMd2 nodeMd2, float y);
 bool NodeMd2SetPosZ(aNodeMd2 nodeMd2, float z);
 /** set scale of node */
-bool NodeMd2SetScale(aNodeMd2 nodeMd2, float x, float y, float z);
+bool NodeMd2SetScalef(aNodeMd2 nodeMd2, float x, float y, float z);
 bool NodeMd2SetScalev(aNodeMd2 nodeMd2, SVector3f scale);
 bool NodeMd2SetScaleX(aNodeMd2 nodeMd2, float x);
 bool NodeMd2SetScaleY(aNodeMd2 nodeMd2, float y);

@@ -57,6 +57,17 @@ int32 RenderCreate();
 /** renderer "destructor" */
 void RenderDestroy();
 
+/** get max native screen resolution to vector2i */
+SVector2i RenderGetMaxScreenResolutionv();
+/** get max native screen resolution to int32 */
+void RenderGetMaxScreenResolutioni(int32* width, int32* height);
+/** get max native screen resolution width */
+int32 RenderGetMaxScreenResolutionWidth();
+/** get max native screen resolution height */
+int32 RenderGetMaxScreenResolutionHeight();
+
+
+
 //system
 ERenderState RenderGetState();
 const char* RenderGetVendor();
@@ -66,3 +77,5 @@ int32 RenderGetDepthBufferSize();
 int32 RenderGetStencilBufferSize();
 /** print info about graphical system */
 void RenderPrintInfo();
+/** print all available screen modes */
+void RenderPrintScreenModes();

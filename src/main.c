@@ -113,7 +113,7 @@ int main(int args, char* argv[])
 #endif // DEBUG
 
     aCamera cam = CameraCreate("test camera");
-    CameraPlacev(cam, vZero3f, vZero3f, vUp3f);
+    CameraPlacef(cam, 0, 0, 0, 0, 0, 0, 0, 1, 0);
 
     bool rotL    = false, rotR    = false;
     bool moveF   = false, moveB   = false;

@@ -302,8 +302,10 @@ typedef struct
 {
     struct    SHeaderOfClass;
 
+    char*     name;
+
     SVector3f position;  // Позиция камеры
-    SVector3f view;      // Направление камеры
+    SVector3f target;    // Направление камеры
     SVector3f upVector;  // Вертикальный вектор
 } SCamera;
 
