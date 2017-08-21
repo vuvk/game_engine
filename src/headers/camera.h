@@ -17,8 +17,8 @@
 */
 
 /*
-  Thanks to :
-    Wingman (http://masandilov.ru/opengl)
+    Thanks to :
+        Wingman (http://masandilov.ru/opengl)
 */
 
 #pragma once
@@ -34,6 +34,7 @@ aCamera CameraCreate(const char* name);
 /** destroy a camera */
 void CameraDestroy(aCamera* camera);
 
+/* GETTERS */
 /** get name of camera */
 const char* CameraGetName(aCamera camera);
 /* get transforms */
@@ -64,6 +65,29 @@ bool ObjectIsCamera(void* object);
         if (!ObjectIsCamera(camera))   \
             return 0;
 
+
+/* SETTERS */
+/** set name of camera */
+bool CameraSetName(aCamera camera, const char* name);
+/* set transforms */
+/** set position of camera */
+bool CameraSetPosf(aCamera camera, float x, float y, float z);
+bool CameraSetPosv(aCamera camera, SVector3f position);
+bool CameraSetPosX(aCamera camera, float x);
+bool CameraSetPosY(aCamera camera, float y);
+bool CameraSetPosZ(aCamera camera, float z);
+/** set target of camera */
+bool CameraSetTargetf(aCamera camera, float x, float y, float z);
+bool CameraSetTargetv(aCamera camera, SVector3f target);
+bool CameraSetTargetX(aCamera camera, float x);
+bool CameraSetTargetY(aCamera camera, float y);
+bool CameraSetTargetZ(aCamera camera, float z);
+/** set upvector of camera */
+bool CameraSetUpVectorf(aCamera camera, float x, float y, float z);
+bool CameraSetUpVectorv(aCamera camera, SVector3f upVector);
+bool CameraSetUpVectorX(aCamera camera, float x);
+bool CameraSetUpVectorY(aCamera camera, float y);
+bool CameraSetUpVectorZ(aCamera camera, float z);
 
 
 // Тут изменяется положение, направление и верт. вектор камеры.

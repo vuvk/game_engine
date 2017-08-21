@@ -199,6 +199,189 @@ inline float CameraGetUpVectorZ(aCamera camera)
 }
 
 
+bool ObjectIsCamera(void* object)
+{
+    if (object != NULL && (*((uint32*)object) == CAM_IDENT))
+        return true;
+
+    return false;
+}
+
+bool CameraSetName(aCamera camera, const char* name)
+{
+    IS_CAMERA_VALID(camera);
+
+    if (name == NULL)
+        return false;
+
+    SCamera* cam = (SCamera*)camera;
+    free(cam->name);
+    cam->name = calloc(1, StrLength(name) + 1);
+    StrCopy(cam->name, name, StrLength(name));
+
+    return true;
+}
+
+inline bool CameraSetPosf(aCamera camera, float x, float y, float z)
+{
+    return CameraSetPosv(camera, NewVector3f(x, y, z));
+}
+
+bool CameraSetPosv(aCamera camera, SVector3f position)
+{
+    IS_CAMERA_VALID(camera);
+
+    SCamera* cam = (SCamera*)camera;
+    cam->position = position;
+
+    LookAtv_M4x4(_world, cam->position, cam->target, cam->upVector);
+
+    return true;
+}
+
+bool CameraSetPosX(aCamera camera, float x)
+{
+    IS_CAMERA_VALID(camera);
+
+    SCamera* cam = (SCamera*)camera;
+    cam->position.x = x;
+
+    LookAtv_M4x4(_world, cam->position, cam->target, cam->upVector);
+
+    return true;
+}
+
+bool CameraSetPosY(aCamera camera, float y)
+{
+    IS_CAMERA_VALID(camera);
+
+    SCamera* cam = (SCamera*)camera;
+    cam->position.y = y;
+
+    LookAtv_M4x4(_world, cam->position, cam->target, cam->upVector);
+
+    return true;
+}
+
+bool CameraSetPosZ(aCamera camera, float z)
+{
+    IS_CAMERA_VALID(camera);
+
+    SCamera* cam = (SCamera*)camera;
+    cam->position.z = z;
+
+    LookAtv_M4x4(_world, cam->position, cam->target, cam->upVector);
+
+    return true;
+}
+
+inline bool CameraSetTargetf(aCamera camera, float x, float y, float z)
+{
+    return CameraSetTargetv(camera, NewVector3f(x, y, z));
+}
+
+bool CameraSetTargetv(aCamera camera, SVector3f target)
+{
+    IS_CAMERA_VALID(camera);
+
+    SCamera* cam = (SCamera*)camera;
+    cam->target = target;
+
+    LookAtv_M4x4(_world, cam->position, cam->target, cam->upVector);
+
+    return true;
+}
+
+bool CameraSetTargetX(aCamera camera, float x)
+{
+    IS_CAMERA_VALID(camera);
+
+    SCamera* cam = (SCamera*)camera;
+    cam->target.x = x;
+
+    LookAtv_M4x4(_world, cam->position, cam->target, cam->upVector);
+
+    return true;
+}
+
+bool CameraSetTargetY(aCamera camera, float y)
+{
+    IS_CAMERA_VALID(camera);
+
+    SCamera* cam = (SCamera*)camera;
+    cam->target.y = y;
+
+    LookAtv_M4x4(_world, cam->position, cam->target, cam->upVector);
+
+    return true;
+}
+
+bool CameraSetTargetZ(aCamera camera, float z)
+{
+    IS_CAMERA_VALID(camera);
+
+    SCamera* cam = (SCamera*)camera;
+    cam->target.z = z;
+
+    LookAtv_M4x4(_world, cam->position, cam->target, cam->upVector);
+
+    return true;
+}
+
+inline bool CameraSetUpVectorf(aCamera camera, float x, float y, float z)
+{
+    return CameraSetUpVectorv(camera, NewVector3f(x, y, z));
+}
+
+bool CameraSetUpVectorv(aCamera camera, SVector3f upVector)
+{
+    IS_CAMERA_VALID(camera);
+
+    SCamera* cam = (SCamera*)camera;
+    cam->upVector = upVector;
+
+    LookAtv_M4x4(_world, cam->position, cam->target, cam->upVector);
+
+    return true;
+}
+
+bool CameraSetUpVectorX(aCamera camera, float x)
+{
+    IS_CAMERA_VALID(camera);
+
+    SCamera* cam = (SCamera*)camera;
+    cam->upVector.x = x;
+
+    LookAtv_M4x4(_world, cam->position, cam->target, cam->upVector);
+
+    return true;
+}
+
+bool CameraSetUpVectorY(aCamera camera, float y)
+{
+    IS_CAMERA_VALID(camera);
+
+    SCamera* cam = (SCamera*)camera;
+    cam->upVector.y = y;
+
+    LookAtv_M4x4(_world, cam->position, cam->target, cam->upVector);
+
+    return true;
+}
+
+bool CameraSetUpVectorZ(aCamera camera, float z)
+{
+    IS_CAMERA_VALID(camera);
+
+    SCamera* cam = (SCamera*)camera;
+    cam->upVector.z = z;
+
+    LookAtv_M4x4(_world, cam->position, cam->target, cam->upVector);
+
+    return true;
+}
+
+
 bool CameraPlacev (aCamera camera, SVector3f position, SVector3f target, SVector3f upVector)
 {
     IS_CAMERA_VALID(camera);
@@ -209,14 +392,14 @@ bool CameraPlacev (aCamera camera, SVector3f position, SVector3f target, SVector
     cam->target   = target;
     cam->upVector = upVector;
 
-    LookAtv_M4x4(_world, cam->position, cam->target, cam->upVector);
+    LookAtv_M4x4(_world, position, target, upVector);
 
     return true;
 }
 
 bool CameraPlacef (aCamera camera,
                    float positionX, float positionY, float positionZ,
-                   float targetX,     float targetY,     float targetZ,
+                   float targetX,   float targetY,   float targetZ,
                    float upVectorX, float upVectorY, float upVectorZ)
 {
     IS_CAMERA_VALID(camera);
@@ -240,9 +423,12 @@ bool CameraPlacef (aCamera camera,
     return true;
 }
 
-
 bool CameraRotatef(aCamera camera, float angle, float x, float y, float z)
 {
+/*
+    http://masandilov.ru/opengl/camera-rotate
+*/
+
     IS_CAMERA_VALID(camera);
 
     if (angle == 0.0f)
@@ -364,7 +550,7 @@ bool CameraSetViewByMouse(aCamera camera)
     {
         currentRotX = 1.0f;
 
-        // врощаем на оставшийся угол
+        // вращаем на оставшийся угол
         if (lastRotX != 1.0f)
         {
             SVector3f axis = CrossVector3f(Sub(cam->target, cam->position), cam->upVector);
@@ -400,10 +586,3 @@ bool CameraSetViewByMouse(aCamera camera)
     return true;
 }
 
-bool ObjectIsCamera(void* object)
-{
-    if (object != NULL && (*((uint32*)object) == CAM_IDENT))
-        return true;
-
-    return false;
-}

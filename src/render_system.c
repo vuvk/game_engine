@@ -174,7 +174,7 @@ void RenderPrintInfo()
     LogWriteMessage("============================================\n");
 }
 
-void RenderPrintScreenModes()
+void RenderPrintDisplayModes()
 {
     int32 displayModeCount = SDL_GetNumDisplayModes(0);
     if (displayModeCount < 1)

@@ -66,6 +66,13 @@ typedef struct
 #define BSP_AREAS            17
 #define BSP_AREA_PORTALS     18
 
+/*
+    Not only are vertices shared between faces, but edges are as well. Each edge is stored as a pair of
+    indices into the vertex array. The storage is two 16-bit integers, so the number of edges in the edge
+    array is the size of the edge lump divided by 4. There is a little complexity here because an edge
+    could be shared by two faces with different windings, and therefore there is no particular "direction"
+    for an edge. This is further discussed in the section on face edges.
+*/
 typedef struct
 {
     uint16  v1;
@@ -87,13 +94,13 @@ typedef struct
 } SFaceBsp;
 
 /*
-  The plane lump stores and array of SPlaneBsp structures which are used as the splitting planes in the BSP.
+    The plane lump stores and array of SPlaneBsp structures which are used as the splitting planes in the BSP.
 
-  Each SPlaneBsp structure is 20 bytes, so the number of planes is the size of the plane lump divided by 20.
-  The x, y and z components of the normal correspond to A, B, C constants and the distance to the D constant in the plane equation:
-      F(x, y, z) = Ax + By + Cz - D
-  A point is on the plane is F(x, y, z) = 0, in front of the plane if F(x, y, z) > 0 and behind the plane if F(x, y, z) < 0.
-  This is used in the traversal of the BSP tree is traversed.
+    Each SPlaneBsp structure is 20 bytes, so the number of planes is the size of the plane lump divided by 20.
+    The x, y and z components of the normal correspond to A, B, C constants and the distance to the D constant in the plane equation:
+        F(x, y, z) = Ax + By + Cz - D
+    A point is on the plane is F(x, y, z) = 0, in front of the plane if F(x, y, z) > 0 and behind the plane if F(x, y, z) < 0.
+    This is used in the traversal of the BSP tree is traversed.
 */
 typedef struct
 {
@@ -104,9 +111,9 @@ typedef struct
 
 
 /*
-  The nodes are stored as an array in the node lump, where the first element is the root of the BSP tree
+    The nodes are stored as an array in the node lump, where the first element is the root of the BSP tree
 
-  As mentioned earlier, the faces listed in the node are not used for rendering but rather for collision detection.
+    As mentioned earlier, the faces listed in the node are not used for rendering but rather for collision detection.
 */
 typedef struct
 {
@@ -123,12 +130,12 @@ typedef struct
 } SNodeMapBsp;
 
 /*
-  The leaf lump stores an array of SLeafBsp structures which are the leaves of the BSP tree
+    The leaf lump stores an array of SLeafBsp structures which are the leaves of the BSP tree
 
-  Leaves are grouped into clusters for the purpose of storing the PVS, and the cluster field
-  gives the index into the array stored in the visibility lump. See the Visibility section for
-  more information on this. If the cluster is -1, then the leaf has no visibility information
-  (in this case the leaf is not a place that is reachable by the player).
+    Leaves are grouped into clusters for the purpose of storing the PVS, and the cluster field
+    gives the index into the array stored in the visibility lump. See the Visibility section for
+    more information on this. If the cluster is -1, then the leaf has no visibility information
+    (in this case the leaf is not a place that is reachable by the player).
 */
 typedef struct
 {
@@ -148,10 +155,10 @@ typedef struct
 } SLeafBsp;
 
 /*
-  Texture information structures specify all of the details about how a face is textured.
+    Texture information structures specify all of the details about how a face is textured.
 
-  u = x * uAxis.x + y * uAxis.y + z * uAxis.z + uOffset
-  v = x * uAxis.x + y * uAxis.y + z * uAxis.z + uOffset
+    u = x * uAxis.x + y * uAxis.y + z * uAxis.z + uOffset
+    v = x * uAxis.x + y * uAxis.y + z * uAxis.z + uOffset
 */
 typedef struct
 {

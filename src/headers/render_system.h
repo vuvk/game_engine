@@ -45,6 +45,7 @@
 
 TMatrix4x4 _world;      // world matrix;
 TMatrix4x4 _pers;       // perspective matrix;
+                        // change in window_system
 
 typedef enum
 {
@@ -78,4 +79,4 @@ int32 RenderGetStencilBufferSize();
 /** print info about graphical system */
 void RenderPrintInfo();
 /** print all available screen modes */
-void RenderPrintScreenModes();
+void RenderPrintDisplayModes();

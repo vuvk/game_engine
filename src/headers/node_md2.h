@@ -48,7 +48,10 @@ const char* NodeMd2GetName(aNodeMd2 nodeMd2);
 /** get all pointers to results by name */
 void NodesMd2GetByName(const char* name, SList* results);
 /** get visibility of node */
-bool NodeMd2IsVisible(aNodeMd2 nodeMd2);
+bool NodeMd2GetVisible(aNodeMd2 nodeMd2);
+/** get visibility of mesh in node */
+#define NodeMd2GetMeshMd2Visible(nodeMd2) NodeMd2GetMeshMd2VisibleEx(nodeMd2, 0)
+bool NodeMd2GetMeshMd2VisibleEx(aNodeMd2 nodeMd2, uint32 numOfMesh);
 
 /* get transforms */
 /** get pivot point of node */
@@ -111,6 +114,11 @@ bool ObjectIsNodeMd2(void* object);
 /* SETTERS */
 /** set name of node */
 bool NodeMd2SetName(aNodeMd2 nodeMd2, const char* name);
+/** set visibility of node */
+bool NodeMd2SetVisible(aNodeMd2 nodeMd2, bool visible);
+/** set visibility of mesh in node */
+#define NodeMd2SetMeshMd2Visible(nodeMd2, visible) NodeMd2SetMeshMd2VisibleEx(nodeMd2, visible, 0)
+bool NodeMd2SetMeshMd2VisibleEx(aNodeMd2 nodeMd2, bool visible, uint32 numOfMesh);
 
 /* set transforms */
 /** set pivot point of node */

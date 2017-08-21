@@ -22,7 +22,7 @@
 
 
 const char ENGINE_NAME[]    = "bodhi Game Engine";
-const char ENGINE_VERSION[] = "0.1.1.0";
+const char ENGINE_VERSION[] = "0.1.1.1";
 
 static EEngineState _engineState = esNotRunning;
 

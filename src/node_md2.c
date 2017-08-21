@@ -321,6 +321,24 @@ void NodesMd2GetByName(const char* name, SList* results)
     }
 }
 
+inline bool NodeMd2GetVisible(aNodeMd2 nodeMd2)
+{
+    IS_NODEMD2_VALID(nodeMd2);
+
+    return ((SNodeMd2*)nodeMd2)->visible;
+}
+
+bool NodeMd2GetMeshMd2VisibleEx(aNodeMd2 nodeMd2, uint32 numOfMesh)
+{
+    IS_NODEMD2_VALID(nodeMd2);
+
+    SListElement* element = ListGetElementByNumber(((SNodeMd2*)nodeMd2)->params, numOfMesh);
+    if (element == NULL || element->value == NULL)
+        return false;
+
+    return ((SParamMd2*)element->value)->visible;
+}
+
 
 bool NodeMd2GetPivotf(aNodeMd2 nodeMd2, float* x, float* y, float* z)
 {
@@ -573,12 +591,6 @@ int32 NodeMd2GetCurrentFrameEx(aNodeMd2 nodeMd2, uint32 numOfMesh)
     return ((SParamMd2*)element->value)->numOfFramePrev;
 }
 
-bool NodeMd2IsVisible(aNodeMd2 nodeMd2)
-{
-    IS_NODEMD2_VALID(nodeMd2);
-
-    return ((SNodeMd2*)nodeMd2)->visible;
-}
 
 /** return true if pointer is nodeMd2 */
 bool ObjectIsNodeMd2(void* object)
@@ -599,6 +611,27 @@ inline bool NodeMd2SetName(aNodeMd2 nodeMd2, const char* name)
     return true;
 }
 
+inline bool NodeMd2SetVisible(aNodeMd2 nodeMd2, bool visible)
+{
+    IS_NODEMD2_VALID(nodeMd2);
+
+    ((SNodeMd2*)nodeMd2)->visible = visible;
+
+    return true;
+}
+
+bool NodeMd2SetMeshMd2VisibleEx(aNodeMd2 nodeMd2, bool visible, uint32 numOfMesh)
+{
+    IS_NODEMD2_VALID(nodeMd2);
+
+    SListElement* element = ListGetElementByNumber(((SNodeMd2*)nodeMd2)->params, numOfMesh);
+    if (element == NULL || element->value == NULL)
+        return false;
+
+    ((SParamMd2*)element->value)->visible = visible;
+
+    return true;
+}
 
 bool NodeMd2SetPivotf(aNodeMd2 nodeMd2, float x, float y, float z)
 {

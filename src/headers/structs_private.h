@@ -252,8 +252,8 @@ typedef struct
     STexInfoBsp* texInfo;
 
     uint8*  visInfo;  // visibility data
-    uint32* faceEdgeTable;
-    uint16* leafFaceTable;
+    int32* faceEdgeTable;
+    int16* leafFaceTable;
 
     /*
     // поверхности
