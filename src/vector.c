@@ -519,3 +519,22 @@ SVector3f CalcNormalVector3f(SVector3f vert1, SVector3f vert2, SVector3f vert3)
 
     return v;
 }
+
+
+SVector3f Vector3fToQ2Vector3f(const SVector3f vec)
+{
+    SVector3f v = { vec.x,
+                   -vec.z,
+                    vec.y };
+
+    return v;
+}
+
+SVector3f Q2Vector3fToVector3f(const SVector3f vec)
+{
+    SVector3f v = { vec.x,
+                    vec.z,
+                   -vec.y };
+
+    return v;
+}

@@ -166,3 +166,11 @@ SVector3f CrossVector3f(SVector3f vec1, SVector3f vec2);
 /* calculate normal */
 SVector3i CalcNormalVector3i(SVector3i vert1, SVector3i vert2, SVector3i vert3);
 SVector3f CalcNormalVector3f(SVector3f vert1, SVector3f vert2, SVector3f vert3);
+
+/* Quake 2 manipulations */
+typedef float SQ2Vector3f[3];
+#define Q2VectorCopy(a, b) (b[0] = a[0], b[1] = a[1], b[2] = a[2])
+#define Q2VectorNegate(a, b) (b[0] = -a[0], b[1] = -a[1], b[2] = -a[2])
+#define Q2VectorClear(a) (a[0] = a[1] = a[2] = 0)
+SVector3f Vector3fToQ2Vector3f(const SVector3f vec);    // change axis to Q2-style
+SVector3f Q2Vector3fToVector3f(const SVector3f vec);    // change axis from Q2-style

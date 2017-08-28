@@ -15,6 +15,7 @@ inline float DegToRad(float deg)
     const float DEG_TO_RAD_COEFF = M_PI / 180.0f;
 	return deg * DEG_TO_RAD_COEFF;
 }
+
 inline float RadToDeg(float rad)
 {
     const float RAD_TO_DEG_COEFF = 180.0f / M_PI;
@@ -27,16 +28,19 @@ void LimitFloat(float* number, float min, float max)
     if (*number < min) *number = min;
     if (*number > max) *number = max;
 }
+
 void LimitShort(int16* number, int16 min, int16 max)
 {
     if (*number < min) *number = min;
     if (*number > max) *number = max;
 }
+
 void LimitInt(int32* number, int32 min, int32 max)
 {
     if (*number < min) *number = min;
     if (*number > max) *number = max;
 }
+
 void LimitLong(int64* number, int64 min, int64 max)
 {
     if (*number < min) *number = min;

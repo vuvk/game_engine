@@ -26,9 +26,10 @@
 
 
 /* math */
+static const float PI_2 = 2.0f*M_PI;
+
 float DegToRad(float deg);
 float RadToDeg(float rad);
-static const float PI_2 = 2.0f*M_PI;
 
 /* limit number in range */
 void LimitFloat(float* number, float min, float max);
