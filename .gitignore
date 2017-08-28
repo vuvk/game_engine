@@ -64,5 +64,7 @@ bin/baseq2/maps
 bin/baseq2/maps/*
 bin/baseq2/textures/e1u1
 bin/baseq2/textures/e1u1/*
+bin/baseq2/textures/e1u2
+bin/baseq2/textures/e1u2/*
 bin/baseq2/models/monsters/infantry
 bin/baseq2/models/monsters/infantry/*
